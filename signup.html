@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Stackly Home Decor Store</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Auth & Dashboard CSS -->
+    <link rel="stylesheet" href="styles-auth-dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-wrapper">
+        
+        <!-- Left Hero Showcase Banner -->
+        <div class="auth-banner" style="background-image: url('assets/images/image_087.webp');">
+            <div class="auth-banner-content" data-aos="fade-right" data-aos-delay="100">
+                <div class="auth-banner-header">
+                    <a href="index.html" class="logo-brand">
+                        <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img">
+                    </a>
+                </div>
+
+                <div class="auth-banner-body">
+                    <span class="badge-tag"><i class="fa-solid fa-sparkles"></i> Join Stackly Club</span>
+                    <h1>Begin Your Interior Styling Journey</h1>
+                    <p>Create your account today and receive a $50 welcome styling voucher towards your first order.</p>
+
+                    <div class="auth-features-list">
+                        <div class="auth-feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fa-solid fa-gift"></i>
+                            <span>Instant $50 Welcome Styling Credit Voucher</span>
+                        </div>
+                        <div class="auth-feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Save Custom Wishlists & Home Moodboards</span>
+                        </div>
+                        <div class="auth-feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <span>Personalized Stylist Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-banner-footer">
+                <span>&copy; 2026 Stackly Inc. All rights reserved.</span>
+                <span>Need help? <a href="contact.html" style="color: var(--accent-yellow); text-decoration: underline;">Contact Support</a></span>
+            </div>
+        </div>
+
+        <!-- Right Auth Form Section -->
+        <div class="auth-container" data-aos="fade-left" data-aos-delay="100">
+            <div class="auth-header-top" data-aos="fade-down" data-aos-delay="150">
+                <a href="index.html" class="btn-back-home">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Store
+                </a>
+            </div>
+
+            <div class="auth-card-body">
+                <div class="auth-title-box" data-aos="fade-down" data-aos-delay="200">
+                    <a href="index.html" style="display: inline-block; margin-bottom: 16px; text-decoration: none;">
+                        <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" style="height: 46px; width: auto; object-fit: contain; display: block; margin: 0 auto;">
+                    </a>
+                    <h2>Create an Account</h2>
+                    <p>Select your account type to register your credentials.</p>
+                </div>
+
+                <!-- Role Selector Pill Switch -->
+                <div class="role-selector-container" data-aos="zoom-in" data-aos-delay="250">
+                    <span class="role-label">Choose Account Type:</span>
+                    <div class="role-switch-pills">
+                        <div class="role-option">
+                            <input type="radio" id="signupRoleUser" name="signupUserRole" value="user" checked>
+                            <label for="signupRoleUser"><i class="fa-solid fa-user"></i> Customer</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="signupRoleAdmin" name="signupUserRole" value="admin">
+                            <label for="signupRoleAdmin"><i class="fa-solid fa-user-shield"></i> Admin</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auth Form -->
+                <form id="signupForm" class="auth-form">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+                        <label for="signupFullName">Full Name</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" id="signupFullName" class="form-control" placeholder="Sophia Reynolds" required>
+                            <i class="fa-regular fa-user input-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="350">
+                        <label for="signupEmail">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <input type="email" id="signupEmail" class="form-control" placeholder="name@example.com" required>
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-icon-wrapper">
+                            <input type="password" id="signupPassword" class="form-control" placeholder="Create strong password" required>
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <button type="button" class="btn-password-toggle" aria-label="Toggle Password Visibility">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options-row" data-aos="fade-up" data-aos-delay="450">
+                        <label class="checkbox-custom">
+                            <input type="checkbox" id="termsAgreement" required>
+                            <span>I agree to the <a href="404.html" class="link-forgot">Privacy Policy</a> and <a href="404.html" class="link-forgot">Terms of Service</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit" data-aos="zoom-in" data-aos-delay="500">
+                        <span>Register</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+                </form>
+
+                <div class="auth-footer-prompt" data-aos="fade-up" data-aos-delay="550">
+                    <span>Already have an account?</span>
+                    <a href="login.html">Sign In Here</a>
+                </div>
+            </div>
+
+            <div style="height: 20px;"></div>
+        </div>
+
+    </div>
+
+    <!-- Animation & Core Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="auth-dashboard.js"></script>
+</body>
+</html>

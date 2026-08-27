@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Stackly Home Decor Store</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Auth & Dashboard CSS -->
+    <link rel="stylesheet" href="styles-auth-dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img">
+                </a>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-menu">
+                <span class="menu-category-title">Navigation</span>
+                
+                <a href="404.html" class="nav-item active" data-tab="tab-admin-overview">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard Overview</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-admin-sales">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <span>Sales Analytics</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-admin-inventory">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Products & Inventory</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-admin-orders">
+                    <i class="fa-solid fa-dolly"></i>
+                    <span>Order Management</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-admin-customers">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Customer Insights</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Bottom User Profile Card & Logout -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user-card">
+                    <div class="sidebar-avatar-circle">A</div>
+                    <div class="sidebar-user-info">
+                        <span class="sidebar-user-name">Eleanor Vance</span>
+                        <span class="sidebar-user-email">eleanor.vance@stackly.org</span>
+                    </div>
+                </div>
+                <a href="login.html" class="sidebar-logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <div class="dashboard-main">
+
+            <!-- Topbar Header -->
+            <header class="dashboard-topbar" data-aos="fade-down">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="topbar-page-title" id="currentTabTitle">Dashboard Overview</h2>
+                </div>
+
+                <div class="topbar-right">
+                    <!-- User Profile Summary -->
+                    <div class="topbar-user-badge">
+                        <div class="topbar-user-text">
+                            <span class="name">Eleanor Vance</span>
+                            <span class="email">eleanor.vance@stackly.org</span>
+                        </div>
+                        <div class="topbar-avatar-circle">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Container -->
+            <main class="dashboard-content">
+
+                <!-- ============================================================
+                     TAB 1: DASHBOARD OVERVIEW
+                     ============================================================ -->
+                <div class="dashboard-tab-content active" id="tab-admin-overview">
+                    
+                    <div class="dashboard-header-banner" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Overview Dashboard</h1>
+                            <p>Real-time tracking profile of store sales, orders, inventory, and customer activity.</p>
+                        </div>
+                        <div class="banner-actions">
+                            <button class="btn-primary-action" onclick="window.location.href='404.html';">
+                                <i class="fa-solid fa-plus"></i> Add New Product
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KPI Metric Cards -->
+                    <section class="kpi-cards-grid">
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Total Products</span>
+                                <div class="kpi-icon-box green"><i class="fa-solid fa-couch"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">1,482</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-up"></i> +5.2%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Total Orders</span>
+                                <div class="kpi-icon-box yellow"><i class="fa-solid fa-bag-shopping"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">3,840</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-up"></i> +12.4%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Active Customers</span>
+                                <div class="kpi-icon-box blue"><i class="fa-solid fa-users"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">12,650</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-up"></i> +8.7%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Pending Orders</span>
+                                <div class="kpi-icon-box purple"><i class="fa-solid fa-clock"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">48</span>
+                                <span class="kpi-trend negative"><i class="fa-solid fa-arrow-down"></i> -2.1%</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Total Revenue</span>
+                                <div class="kpi-icon-box green"><i class="fa-solid fa-dollar-sign"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">$428,950</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-arrow-up"></i> +18.9%</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-2">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-line"></i> Annual Revenue vs Target (Line Chart)</h3>
+                                <button class="btn-card-action" onclick="window.location.href='404.html';">Export PDF</button>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminSalesChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-simple"></i> Monthly Order Volume (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminOverviewOrdersChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Live Activity Feed Section -->
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-clock-rotate-left"></i> Live Activity Feed</h3>
+                        </div>
+                        <div class="activity-feed-grid">
+                            <div class="notification-item" data-aos="fade-left" data-aos-delay="100">
+                                <div class="notification-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h5 class="notification-title">High-Value Order <span class="nobreak">#STK-89240</span></h5>
+                                    <p style="font-size: 0.85rem; color: #6b7280; margin: 0 0 4px 0;">Marcus Vance purchased Velvet Armchair ($1,240.00)</p>
+                                    <span style="font-size: 0.75rem; color: #9ca3af;">10 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item" data-aos="fade-left" data-aos-delay="200">
+                                <div class="notification-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h5 class="notification-title">Stock Alert: Ceramic Vases</h5>
+                                    <p style="font-size: 0.85rem; color: #6b7280; margin: 0 0 4px 0;">SKU DEC-ACC-009 reached 0 stock level.</p>
+                                    <span style="font-size: 0.75rem; color: #9ca3af;">45 minutes ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item" data-aos="fade-left" data-aos-delay="300">
+                                <div class="notification-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="notification-text">
+                                    <h5 class="notification-title">5-Star Product Review</h5>
+                                    <p style="font-size: 0.85rem; color: #6b7280; margin: 0 0 4px 0;">Sophia R. left 5 stars for Brass Pendant Chandelier.</p>
+                                    <span style="font-size: 0.75rem; color: #9ca3af;">2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 2: SALES ANALYTICS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-admin-sales">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #1b2e22 0%, #0f1c14 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Sales & Financial Performance</h1>
+                            <p>Analyze revenue growth, quarterly milestones, and sales channels.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-column"></i> Category Revenue Breakdown (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminCategoryChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-simple"></i> Quarterly Revenue Performance (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminQuarterlySalesChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-2">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-pie-chart"></i> Sales Channel Distribution (Doughnut Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminSalesChannelChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Payment Gateways Card -->
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-wallet"></i> Payment Gateways & Revenue Share</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin: auto 0;">
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Credit / Debit Cards</span><span>58% ($248k)</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 6px;"><div class="progress-bar-fill" style="width: 58%; background: #203528;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>PayPal Express</span><span>26% ($111k)</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 6px;"><div class="progress-bar-fill" style="width: 26%; background: #f5b742;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Apple & Google Pay</span><span>16% ($68k)</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 6px;"><div class="progress-bar-fill" style="width: 16%; background: #3b82f6;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>BNPL (Klarna / Afterpay)</span><span>12% ($51k)</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 6px;"><div class="progress-bar-fill" style="width: 12%; background: #8b5cf6;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Direct Bank Wire</span><span>4% ($17k)</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 6px;"><div class="progress-bar-fill" style="width: 4%; background: #10b981;"></div></div>
+                                </div>
+
+                                <div style="margin-top: 6px; padding-top: 8px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; font-size: 0.78rem; color: #6b7280;">
+                                    <span><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> SSL 256-Bit Encrypted</span>
+                                    <span>Approval Rate: <strong>99.1%</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 3: PRODUCTS & INVENTORY
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-admin-inventory">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #2a392e 0%, #152419 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Inventory & Product Stock Management</h1>
+                            <p>Monitor warehouse stock levels, stock turnover rates, and return rate metrics.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-boxes-stacked"></i> Stock Status (Doughnut Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminStockChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-rotate-right"></i> Stock Turnover Velocity (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminStockTurnoverChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-2">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Return Rates by Category (Pie Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminReturnRateChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Low Stock Alerts Card -->
+                        <div class="chart-card" style="border-left: 4px solid #f59e0b;" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-header">
+                                <h3 style="color: #d97706;"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock Alerts</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 8px; margin: auto 0;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: #fffbe6; border-radius: 8px;">
+                                    <div><strong>Brass Pendant Chandelier</strong><br><span style="font-size: 0.78rem; color: #6b7280;">6 Units left</span></div>
+                                    <button class="btn-card-action" onclick="window.location.href='404.html';">Reorder</button>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: #fee2e2; border-radius: 8px;">
+                                    <div><strong style="color: #991b1b;">Matte Clay Vases</strong><br><span style="font-size: 0.78rem; color: #6b7280;">0 Units (Out of Stock)</span></div>
+                                    <button class="btn-card-action" style="background: #ef4444; color: #fff;" onclick="window.location.href='404.html';">Urgent</button>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: #fffbe6; border-radius: 8px;">
+                                    <div><strong>Handwoven Wool Rug</strong><br><span style="font-size: 0.78rem; color: #6b7280;">4 Units left</span></div>
+                                    <button class="btn-card-action" onclick="window.location.href='404.html';">Reorder</button>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background: #fffbe6; border-radius: 8px;">
+                                    <div><strong>Teak Wood Accent Chair</strong><br><span style="font-size: 0.78rem; color: #6b7280;">2 Units left</span></div>
+                                    <button class="btn-card-action" onclick="window.location.href='404.html';">Reorder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-warehouse"></i> Product Catalog & Inventory Levels</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product Details</th>
+                                        <th>SKU</th>
+                                        <th>Category</th>
+                                        <th>Stock Quantity</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="table-product-cell">
+                                                <img src="assets/images/image_014.webp" alt="Lounge Chair" class="table-product-img">
+                                                <div class="table-product-info">
+                                                    <h4>Velvet Ergonomic Lounge Chair</h4>
+                                                    <p>Emerald Green Accent Chair</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><code>DEC-CHR-042</code></td>
+                                        <td>Furniture</td>
+                                        <td>
+                                            <span>45 Units</span>
+                                            <div class="progress-bar-container"><div class="progress-bar-fill" style="width: 75%; background-color: #10b981;"></div></div>
+                                        </td>
+                                        <td><strong>$349.00</strong></td>
+                                        <td><span class="badge-status in-stock"><i class="fa-solid fa-circle-check"></i> In Stock</span></td>
+                                        <td><button class="btn-table-icon" onclick="window.location.href='404.html';"><i class="fa-solid fa-pen"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 4: ORDER MANAGEMENT
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-admin-orders">
+                    <div class="dashboard-header-banner" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Order Processing & Logistics</h1>
+                            <p>Track order dispatch velocity, courier performance, and package fulfillment statuses.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Delivery Status (Pie Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminOrdersChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-line"></i> Dispatch Velocity (Line Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminDispatchVelocityChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-2">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-truck-fast"></i> Courier On-Time Performance % (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminCourierPerfChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Express Dispatch Metrics Card -->
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-clock"></i> Express Dispatch Metrics</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin: auto 0;">
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Avg. Packing Speed</span><span style="color: #10b981;">3.2 Hours</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 5px;"><div class="progress-bar-fill" style="width: 85%; background: #10b981;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Courier Transit Velocity</span><span style="color: #3b82f6;">1.8 Days</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 5px;"><div class="progress-bar-fill" style="width: 90%; background: #3b82f6;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Delivery Success Rate</span><span style="color: #f5b742;">98.6%</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 5px;"><div class="progress-bar-fill" style="width: 98%; background: #f5b742;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Same-Day Dispatch Rate</span><span style="color: #8b5cf6;">94.2%</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 5px;"><div class="progress-bar-fill" style="width: 94%; background: #8b5cf6;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.82rem; margin-bottom: 2px;">
+                                        <span>Return Handling Velocity</span><span style="color: #203528;">24.5 Hours</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 5px;"><div class="progress-bar-fill" style="width: 78%; background: #203528;"></div></div>
+                                </div>
+
+                                <div style="margin-top: 4px; padding-top: 8px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; font-size: 0.78rem; color: #6b7280;">
+                                    <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Fulfillment: Active</span>
+                                    <span>Accuracy: <strong>99.4%</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-dolly"></i> Customer Orders Directory</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Total</th>
+                                        <th>Payment</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#STK-89241</strong></td>
+                                        <td>Sophia Reynolds</td>
+                                        <td>Aug 22, 2026</td>
+                                        <td>$538.50</td>
+                                        <td>Credit Card</td>
+                                        <td><span class="badge-status pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                                        <td><button class="btn-table-icon" title="Process" onclick="window.location.href='404.html';"><i class="fa-solid fa-check"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 5: CUSTOMER INSIGHTS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-admin-customers">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #1d3326 0%, #101c15 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Customer Analytics & Demographics</h1>
+                            <p>Understand user growth, age demographics, and traffic acquisition channels.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-user-plus"></i> Customer Growth (Line Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminCustomerGrowthChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-users-viewfinder"></i> Age Demographics (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminCustomerDemographicsChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-bullseye"></i> Acquisition Channels (Pie Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="adminCustomerAcquisitionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Customer Loyalty Tiers Card -->
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-crown" style="color: #f5b742;"></i> Customer Loyalty Tiers Overview</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 16px; margin: auto 0;">
+                                <!-- Gold VIP -->
+                                <div class="loyalty-tier-item">
+                                    <div class="loyalty-tier-header">
+                                        <span style="color: #b47808;"><i class="fa-solid fa-crown"></i> Gold VIP Members</span>
+                                        <span style="color: #b47808;">1,420 (11%)</span>
+                                    </div>
+                                    <div style="font-size: 0.78rem; color: #6b7280;">Avg. Lifetime Spend: <strong>$2,630.00</strong></div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 8px;">
+                                        <div class="progress-bar-fill" style="width: 11%; background-color: #f5b742;"></div>
+                                    </div>
+                                    <div class="loyalty-perks-list">
+                                        <span class="perk-tag">20% VIP Discount</span>
+                                        <span class="perk-tag">Dedicated Stylist</span>
+                                        <span class="perk-tag">Free Express Shipping</span>
+                                    </div>
+                                </div>
+
+                                <!-- Silver Club -->
+                                <div class="loyalty-tier-item">
+                                    <div class="loyalty-tier-header">
+                                        <span style="color: #4b5563;"><i class="fa-solid fa-medal"></i> Silver Club Members</span>
+                                        <span style="color: #4b5563;">4,850 (38%)</span>
+                                    </div>
+                                    <div style="font-size: 0.78rem; color: #6b7280;">Avg. Lifetime Spend: <strong>$1,250.00</strong></div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 8px;">
+                                        <div class="progress-bar-fill" style="width: 38%; background-color: #9ca3af;"></div>
+                                    </div>
+                                    <div class="loyalty-perks-list">
+                                        <span class="perk-tag">10% Club Discount</span>
+                                        <span class="perk-tag">Birthday Gift</span>
+                                    </div>
+                                </div>
+
+                                <!-- Standard Accounts -->
+                                <div class="loyalty-tier-item">
+                                    <div class="loyalty-tier-header">
+                                        <span style="color: #203528;"><i class="fa-solid fa-user-check"></i> Standard Accounts</span>
+                                        <span style="color: #203528;">6,380 (51%)</span>
+                                    </div>
+                                    <div style="font-size: 0.78rem; color: #6b7280;">Avg. Lifetime Spend: <strong>$450.00</strong></div>
+                                    <div class="progress-bar-container"  style="width: 100%; height: 8px;">
+                                        <div class="progress-bar-fill" style="width: 51%; background-color: #203528;"></div>
+                                    </div>
+                                    <div class="loyalty-perks-list">
+                                        <span class="perk-tag">Standard Store Access</span>
+                                    </div>
+                                </div>
+
+                                <button class="btn-primary-action" style="width: 100%; font-size: 0.88rem; padding: 12px; margin-top: 4px;" onclick="window.location.href='404.html';">
+                                    <i class="fa-solid fa-sliders"></i> Manage VIP Tier Rules & Perks
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Top VIP Customer Spenders Table -->
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-users"></i> Top VIP Customer Spenders</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Email</th>
+                                        <th>Total Orders</th>
+                                        <th>Lifetime Spent</th>
+                                        <th>Loyalty Rank</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Customer 1 -->
+                                    <tr>
+                                        <td>
+                                            <div class="table-product-cell">
+                                                <img src="assets/images/image_015.webp" alt="Sophia Reynolds" class="avatar-img">
+                                                <strong style="font-size: 0.95rem;">Sophia Reynolds</strong>
+                                            </div>
+                                        </td>
+                                        <td>sophia.reynolds@example.com</td>
+                                        <td>14 Orders</td>
+                                        <td><strong style="color: #203528; font-size: 0.95rem;">$2,630.00</strong></td>
+                                        <td><span class="badge-status in-stock"><i class="fa-solid fa-crown"></i> Gold VIP</span></td>
+                                        <td><button class="btn-table-icon" title="Email Customer" onclick="window.location.href='404.html';"><i class="fa-solid fa-envelope"></i></button></td>
+                                    </tr>
+                                    <!-- Customer 2 -->
+                                    <tr>
+                                        <td>
+                                            <div class="table-product-cell">
+                                                <img src="assets/images/image_016.webp" alt="Marcus Vance" class="avatar-img">
+                                                <strong style="font-size: 0.95rem;">Marcus Vance</strong>
+                                            </div>
+                                        </td>
+                                        <td>marcus.vance@example.com</td>
+                                        <td>11 Orders</td>
+                                        <td><strong style="color: #203528; font-size: 0.95rem;">$1,890.00</strong></td>
+                                        <td><span class="badge-status processing"><i class="fa-solid fa-medal"></i> Silver Club</span></td>
+                                        <td><button class="btn-table-icon" title="Email Customer" onclick="window.location.href='404.html';"><i class="fa-solid fa-envelope"></i></button></td>
+                                    </tr>
+                                    <!-- Customer 3 -->
+                                    <tr>
+                                        <td>
+                                            <div class="table-product-cell">
+                                                <img src="assets/images/image_017.webp" alt="Elena Rostova" class="avatar-img">
+                                                <strong style="font-size: 0.95rem;">Elena Rostova</strong>
+                                            </div>
+                                        </td>
+                                        <td>elena.rostova@example.com</td>
+                                        <td>9 Orders</td>
+                                        <td><strong style="color: #203528; font-size: 0.95rem;">$1,420.00</strong></td>
+                                        <td><span class="badge-status processing"><i class="fa-solid fa-medal"></i> Silver Club</span></td>
+                                        <td><button class="btn-table-icon" title="Email Customer" onclick="window.location.href='404.html';"><i class="fa-solid fa-envelope"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Animation & Core Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="auth-dashboard.js"></script>
+</body>
+</html>

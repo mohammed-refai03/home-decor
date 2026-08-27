@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Contact Us</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Animated Luxury Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-ring">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Loading" class="preloader-logo-img" data-aos="zoom-in">
+                <div class="preloader-spinner"></div>
+            </div>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header / Navbar -->
+    <header class="header page-header">
+        <div class="container header-container"  data-aos="fade-up">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline"><i class="fa-regular fa-user"></i> Login</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Banner -->
+    <section class="page-hero" data-aos="fade-up">
+        <div class="page-hero-bg">
+            <img src="assets/images/image_046.webp" alt="Contact Us" data-aos="zoom-in">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="container page-hero-content center"  data-aos="fade-up">
+            <h1>Get in <span class="highlight">Touch</span></h1>
+            <p>We'd love to hear from you. Our team is always here to help.</p>
+        </div>
+    </section>
+
+    <!-- 2 & 3. Contact Information & Contact Form -->
+    <section class="contact-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="contact-wrapper">
+                
+                <!-- Contact Information -->
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="subtitle">CONTACT US</span>
+                    <h2  data-aos="fade-up">Let's Start a <span class="highlight-line">Conversation</span></h2>
+                    <p class="mb-4">Whether you have a question about our products, need design advice, or want to collaborate, we are ready to answer all your questions.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Headquarters</h4>
+                                <p>MMR Complex, Chinna Thirupathi,<br>near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Phone</h4>
+                                <p>+91 9876543210</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Email</h4>
+                                <p>info@stackly.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container"  data-aos="fade-up">
+                    <form class="contact-form">
+                        <h3  data-aos="fade-up">Send us a Message</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control">
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Order Support</option>
+                                <option value="design">Design Consultation</option>
+                                <option value="press">Press & Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Our Location (Map) -->
+    <section class="map-section" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.123!2d78.1739798!3d11.6829566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- 5. Customer Support -->
+    <section class="support-section section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle">WE ARE HERE FOR YOU</span>
+                <h2  data-aos="fade-up">Dedicated <span class="highlight-line">Support</span></h2>
+            </div>
+            
+            <div class="support-grid">
+                <div class="support-card">
+                    <i class="fa-solid fa-cart-shopping support-icon"></i>
+                    <h4  data-aos="fade-up">Sales & Orders</h4>
+                    <p>Questions about a product or need help placing an order? Our sales team is ready to assist.</p>
+                    <span>Response time: Under 2 hours</span>
+                </div>
+                <div class="support-card">
+                    <i class="fa-solid fa-truck-fast support-icon"></i>
+                    <h4  data-aos="fade-up">Delivery & Returns</h4>
+                    <p>Track your shipment or initiate a return. We make the process simple and hassle-free.</p>
+                    <span>Response time: Under 12 hours</span>
+                </div>
+                <div class="support-card">
+                    <i class="fa-solid fa-pen-ruler support-icon"></i>
+                    <h4  data-aos="fade-up">Design Advice</h4>
+                    <p>Need help matching colors or choosing the right dimensions? Talk to our design experts.</p>
+                    <span>Response time: Under 24 hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- 8. Visit Our Showroom -->
+    <section class="showroom-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="showroom-wrapper">
+                <div class="showroom-image">
+                    <img src="assets/images/image_047.webp" alt="Stackly Showroom" data-aos="zoom-in">
+                </div>
+                <div class="showroom-content">
+                    <span class="subtitle">EXPERIENCE IT</span>
+                    <h2  data-aos="fade-up">Visit Our <span class="highlight-line">Showroom</span></h2>
+                    <p>Want to see, touch, and feel the quality of our furniture before buying? Visit our flagship showroom in Salem. Our design consultants are available on the floor to help you style your perfect space.</p>
+                    
+                    <div class="showroom-details">
+                        <div class="detail-box">
+                            <i class="fa-solid fa-shop"></i>
+                            <div>
+                                <h5>Address</h5>
+                                <p>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <i class="fa-regular fa-clock"></i>
+                            <div>
+                                <h5>Store Hours</h5>
+                                <p>Mon - Sat: 10:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.google.com/maps/place/Stackly/@11.6829566,78.1739798,17z/data=!3m1!4b1!4m6!3m5!1s0x3babefef7fd970bb:0xe11aef1a71994f9!8m2!3d11.6829566!4d78.1739798!16s%2Fg%2F11l660s35r?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Get Directions on Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Why Contact Us -->
+    <section class="why-contact-section section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Why Reach <span class="highlight-line">Out?</span></h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="value-card-icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+                    <h4  data-aos="fade-up">Expert Advice</h4>
+                    <p>Speak directly with certified interior designers who know our catalog inside and out.</p>
+                </div>
+                <div class="value-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="value-card-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                    <h4  data-aos="fade-up">Quick Resolution</h4>
+                    <p>We pride ourselves on industry-leading response times to resolve any order issues fast.</p>
+                </div>
+                <div class="value-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="value-card-icon-wrap"><i class="fa-solid fa-swatchbook"></i></div>
+                    <h4  data-aos="fade-up">Custom Requests</h4>
+                    <p>Need a different fabric or dimension? Contact us to discuss bespoke furniture options.</p>
+                </div>
+                <div class="value-card" data-aos="flip-up" data-aos-delay="400">
+                    <div class="value-card-icon-wrap"><i class="fa-solid fa-handshake"></i></div>
+                    <h4  data-aos="fade-up">B2B Partnerships</h4>
+                    <p>We offer exclusive trade discounts and support for interior designers and architects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- 6. Frequently Asked Questions (Reused) -->
+    <section class="faq-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Common <span class="highlight-line">Questions</span></h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>How can I track my order?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Once your order ships, you will receive an email with a tracking link. You can also log into your Stackly account and view the real-time status of your delivery under 'Order History'.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>What is your return policy?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We offer a 30-day return window for all standard items in original condition. Custom-made furniture and clearance items are final sale. Please contact support to initiate a return.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Do you offer assembly services?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we offer 'White Glove Delivery' for an additional fee at checkout. This includes delivery to your room of choice, complete assembly, and removal of all packaging materials.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Connect With Us -->
+    <section class="connect-section section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container center"  data-aos="fade-up">
+            <span class="subtitle">SOCIAL MEDIA</span>
+            <h2  data-aos="fade-up">Connect With <span class="highlight-line">Us</span></h2>
+            <p style="margin-bottom: 40px; color: var(--text-light);">Follow us for daily inspiration, new arrivals, and exclusive offers.</p>
+            
+            <div class="connect-grid">
+                <a href="404.html" class="connect-card instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <h4  data-aos="fade-up">Instagram</h4>
+                    <p>@StacklyDecor</p>
+                </a>
+                <a href="404.html" class="connect-card pinterest">
+                    <i class="fa-brands fa-pinterest"></i>
+                    <h4  data-aos="fade-up">Pinterest</h4>
+                    <p>Stackly Interiors</p>
+                </a>
+                <a href="404.html" class="connect-card facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <h4  data-aos="fade-up">Facebook</h4>
+                    <p>Stackly Home</p>
+                </a>
+                <a href="404.html" class="connect-card twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                    <h4  data-aos="fade-up">Twitter / X</h4>
+                    <p>@StacklyHQ</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 10. Call to Action (Reused) -->
+    <section class="cta-section section-padding" style="background-image: linear-gradient(rgba(32,53,40,0.8), rgba(32,53,40,0.8)), url('assets/images/image_048.webp'); background-size: cover; background-position: center; color: white;" data-aos="fade-up">
+        <div class="container center"  data-aos="fade-up">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;" data-aos="fade-up">Ready to Transform Your Home?</h2>
+            <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 40px; opacity: 0.9;">Explore our latest collections and find the perfect pieces to elevate your living space.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="index.html" class="btn btn-primary">Shop Collection</a>
+                <a href="services.html" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer class="footer">
+        <div class="container"  data-aos="fade-up">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+                    <p class="footer-desc">Curating beautiful spaces with premium quality furniture and decor for the modern home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Categories</h3>
+                    <ul>
+                        <li><a href="404.html">Furniture</a></li>
+                        <li><a href="404.html">Lighting</a></li>
+                        <li><a href="404.html">Wall Decor</a></li>
+                        <li><a href="404.html">Rugs & Carpets</a></li>
+                        <li><a href="404.html">Home Accents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3  data-aos="fade-up">Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Decor Avenue, NY 10012, USA</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> hello@stacklydecor.com</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Stackly Home Decor Store. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

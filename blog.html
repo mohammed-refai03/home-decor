@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Blog & Inspiration</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Animated Luxury Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-ring">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Loading" class="preloader-logo-img" data-aos="zoom-in">
+                <div class="preloader-spinner"></div>
+            </div>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header / Navbar -->
+    <header class="header page-header">
+        <div class="container header-container"  data-aos="fade-up">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline"><i class="fa-regular fa-user"></i> Login</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Banner -->
+    <section class="page-hero" data-aos="fade-up">
+        <div class="page-hero-bg">
+            <img src="assets/images/image_018.webp" alt="Blog Inspiration" data-aos="zoom-in">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="container page-hero-content center"  data-aos="fade-up">
+            <h1>Design <span class="highlight">Inspiration</span></h1>
+            <p>Tips, trends, and tutorials to help you create a space you love.</p>
+        </div>
+    </section>
+
+    <!-- 2. Featured Blog Post -->
+    <section class="featured-post-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header" data-aos="zoom-in-up">
+                <span class="subtitle">MUST READ</span>
+                <h2  data-aos="fade-up">Featured <span class="highlight-line">Article</span></h2>
+            </div>
+            
+            <div class="featured-post-card">
+                <div class="featured-post-img">
+                    <img src="assets/images/image_019.webp" alt="Living Room Tips" data-aos="zoom-in">
+                    <span class="category-badge">Interior Design</span>
+                </div>
+                <div class="featured-post-content">
+                    <div class="blog-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 25, 2023</span>
+                        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h2  data-aos="fade-up"><a href="404.html">The Art of Layering: How to Create a Cozy and Inviting Living Room</a></h2>
+                    <p>Discover the secrets of professional interior designers. Learn how to mix textures, balance colors, and layer lighting to completely transform your living space from flat and boring to warm, rich, and incredibly inviting this season.</p>
+                    <div class="author-info">
+                        <img src="assets/images/image_006.webp" alt="Sarah Jenkins" data-aos="zoom-in">
+                        <span>By <strong>Sarah Jenkins</strong></span>
+                    </div>
+                    <a href="404.html" class="btn featured-article-btn">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Main Layout (4, 5, 6, 7) -->
+    <section class="blog-main-layout section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container blog-grid-container"  data-aos="fade-up">
+            
+            <!-- Main Content Area: 4. Latest Articles -->
+            <div class="blog-main-content">
+                <h3 class="widget-title" data-aos="fade-up">Latest Articles</h3>
+                <div class="latest-articles-grid">
+                    <!-- Article 1 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="blog-img">
+                            <img src="assets/images/image_020.webp" alt="Bedroom Ideas" data-aos="zoom-in">
+                            <span class="category-badge">Bedroom</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 20, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">How to Choose the Perfect Mattress & Bed Frame</a></h3>
+                            <p>A comprehensive guide to finding the best sleep setup for your body type and bedroom aesthetic.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Article 2 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="blog-img">
+                            <img src="assets/images/image_021.webp" alt="Kitchen Decor" data-aos="zoom-in">
+                            <span class="category-badge">Kitchen</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 18, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">Top 5 Color Palettes for Modern Kitchens in 2024</a></h3>
+                            <p>Get ahead of the curve with these stunning color combinations that will define kitchen design next year.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Article 3 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="blog-img">
+                            <img src="assets/images/image_022.webp" alt="Lighting Guide" data-aos="zoom-in">
+                            <span class="category-badge">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 12, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">The Ultimate Guide to Layering Light in Any Room</a></h3>
+                            <p>Master the three types of lighting to create functional and beautifully illuminated spaces.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Article 4 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="blog-img">
+                            <img src="assets/images/image_023.webp" alt="Small Spaces" data-aos="zoom-in">
+                            <span class="category-badge">Small Spaces</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 08, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">10 Genius Storage Hacks for Tiny Apartments</a></h3>
+                            <p>Maximize every square inch of your home without sacrificing style or cluttering your space.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Article 5 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="blog-img">
+                            <img src="assets/images/image_024.webp" alt="Living Room Setup" data-aos="zoom-in">
+                            <span class="category-badge">Living Room</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 02, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">Arranging Furniture for Better Flow and Conversation</a></h3>
+                            <p>Ditch the TV-centric layout. Here's how to position your seating to encourage connection.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Article 6 -->
+                    <article class="blog-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="blog-img">
+                            <img src="assets/images/image_025.webp" alt="Outdoor Decor" data-aos="zoom-in">
+                            <span class="category-badge">Outdoor</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Sep 28, 2023</span>
+                            </div>
+                            <h3  data-aos="fade-up"><a href="404.html">Transitional Patio Decor to Enjoy All Autumn Long</a></h3>
+                            <p>Extend the life of your outdoor space with weather-resistant textiles and warm lighting.</p>
+                            <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                
+            </div>
+
+            <!-- Sidebar -->
+            <div class="blog-sidebar">
+                
+                <!-- 5. Popular Posts -->
+                <div class="sidebar-widget" data-aos="fade-up">
+                    <h4 class="widget-title" data-aos="fade-up">Popular Posts</h4>
+                    <div class="popular-posts-list" data-aos="fade-up">
+                        <a href="404.html" class="popular-post-item" data-aos="fade-up">
+                            <img src="assets/images/image_026.webp" alt="Post" data-aos="zoom-in">
+                            <div class="pp-info">
+                                <h5>5 Ways to Style a Velvet Sofa</h5>
+                                <span>Sep 14, 2023</span>
+                            </div>
+                        </a>
+                        <a href="404.html" class="popular-post-item" data-aos="fade-up">
+                            <img src="assets/images/image_027.webp" alt="Post" data-aos="zoom-in">
+                            <div class="pp-info">
+                                <h5>Choosing the Right Rug Size</h5>
+                                <span>Aug 22, 2023</span>
+                            </div>
+                        </a>
+                        <a href="404.html" class="popular-post-item" data-aos="fade-up">
+                            <img src="assets/images/image_028.webp" alt="Post" data-aos="zoom-in">
+                            <div class="pp-info">
+                                <h5>Creating a Gallery Wall Like a Pro</h5>
+                                <span>Jul 05, 2023</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 6. Decorating Tips -->
+                <div class="sidebar-widget tip-widget" data-aos="fade-up">
+                    <div class="tip-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                    <h4  data-aos="fade-up">Pro Decorating Tip</h4>
+                    <p>"When hanging curtains, mount the rod 4-6 inches above the window frame and let the fabric gently kiss the floor. This immediately makes your ceilings feel taller and the room more grand."</p>
+                </div>
+                
+                <!-- 7. Trending Topics -->
+                <div class="sidebar-widget" data-aos="fade-up">
+                    <h4 class="widget-title" data-aos="fade-up">Trending Topics</h4>
+                    <div class="tag-cloud" data-aos="fade-up">
+                        <a href="404.html" class="tag">#Minimalism</a>
+                        <a href="404.html" class="tag">#BohoChic</a>
+                        <a href="404.html" class="tag">#PlantParent</a>
+                        <a href="404.html" class="tag">#DIY</a>
+                        <a href="404.html" class="tag">#SmallSpaces</a>
+                        <a href="404.html" class="tag">#ColorTrends</a>
+                        <a href="404.html" class="tag">#VintageDecor</a>
+                    </div>
+                </div>
+                
+                <!-- 8. Archives -->
+                <div class="sidebar-widget" data-aos="fade-up">
+                    <h4 class="widget-title" data-aos="fade-up">Archives</h4>
+                    <ul class="archive-list" data-aos="fade-up">
+                        <li><a href="404.html">October 2023 <span>(12)</span></a></li>
+                        <li><a href="404.html">September 2023 <span>(8)</span></a></li>
+                        <li><a href="404.html">August 2023 <span>(15)</span></a></li>
+                        <li><a href="404.html">July 2023 <span>(9)</span></a></li>
+                        <li><a href="404.html">June 2023 <span>(11)</span></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- DIY Video Tutorials -->
+    <section class="video-tutorials section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header" data-aos="zoom-in-up">
+                <span class="subtitle">LEARN & CREATE</span>
+                <h2  data-aos="fade-up">DIY Decor <span class="highlight-line">Tutorials</span></h2>
+            </div>
+            <div class="video-grid" data-aos="fade-up">
+                <div class="video-card" data-aos="flip-up">
+                    <div class="video-thumb">
+                        <img src="assets/images/image_029.webp" alt="DIY Video" data-aos="zoom-in">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <span class="video-duration">05:24</span>
+                    </div>
+                    <div class="video-info">
+                        <h4  data-aos="fade-up">How to Build a Floating Shelf</h4>
+                        <p>A step-by-step guide to adding minimalist storage to any room.</p>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="flip-up">
+                    <div class="video-thumb">
+                        <img src="assets/images/image_030.webp" alt="DIY Video" data-aos="zoom-in">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <span class="video-duration">03:45</span>
+                    </div>
+                    <div class="video-info">
+                        <h4  data-aos="fade-up">Upcycling Old Vases with Terracotta Paint</h4>
+                        <p>Give your old glass vases a trendy, textured faux-terracotta finish.</p>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="flip-up">
+                    <div class="video-thumb">
+                        <img src="assets/images/image_031.webp" alt="DIY Video" data-aos="zoom-in">
+                        <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        <span class="video-duration">08:12</span>
+                    </div>
+                    <div class="video-info">
+                        <h4  data-aos="fade-up">Creating a Professional Gallery Wall</h4>
+                        <p>Learn the designer's trick to spacing and arranging frames perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Featured Products -->
+    <section class="blog-products section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle">SHOP THE LOOK</span>
+                <h2  data-aos="fade-up">Featured <span class="highlight-line">Products</span></h2>
+                <p>Loved the pieces in our articles? Shop them directly below.</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="badge">New</div>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="assets/images/image_032.webp" alt="Velvet Sofa" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(42)</span>
+                        </div>
+                        <h3  data-aos="fade-up">Emerald Velvet Sofa</h3>
+                        <div class="price-row">
+                            <span class="price">$899.00</span>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="200">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="assets/images/image_033.webp" alt="Ceramic Vase" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <h3  data-aos="fade-up">Ribbed Ceramic Vase</h3>
+                        <div class="price-row">
+                            <span class="price">$45.00</span>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="badge sale">Sale</div>
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="assets/images/image_034.webp" alt="Floor Lamp" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <span>(24)</span>
+                        </div>
+                        <h3  data-aos="fade-up">Brass Arc Floor Lamp</h3>
+                        <div class="price-row">
+                            <span class="price"><span class="old-price">$180.00</span> $149.00</span>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="100">
+                    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                    <div class="product-img">
+                        <img src="assets/images/image_035.webp" alt="Lounge Chair" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(56)</span>
+                        </div>
+                        <h3  data-aos="fade-up">Mid-Century Lounge Chair</h3>
+                        <div class="price-row">
+                            <span class="price">$320.00</span>
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </div>
+    </section>
+
+   
+
+    <!-- 10. Newsletter Subscription (Reused) -->
+    <section class="newsletter section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-image">
+                    <img src="assets/images/image_039.webp" alt="Cozy Corner" data-aos="zoom-in">
+                </div>
+                <div class="newsletter-content">
+                    <h2  data-aos="fade-up">Join Our <span class="highlight">Community</span></h2>
+                    <p>Subscribe to our newsletter and get weekly design tips, inspiration, and early access to sales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="privacy-text">By subscribing, you agree to our Terms & Conditions and Privacy Policy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- 10. FAQ (Reused) -->
+    <section class="faq-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Blog & Community <span class="highlight-line">FAQ</span></h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>How often do you post new articles?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We publish new design inspiration, tutorials, and trend reports every Tuesday and Thursday. Subscribe to our newsletter so you never miss an update!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Can I submit photos of my home to be featured?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! We love seeing how you style Stackly pieces. Post your photos on Instagram and tag @StacklyDecor with the hashtag #MyStacklyHome for a chance to be featured in our gallery and blog.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Do you accept guest blog posts?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We are always looking to collaborate with passionate interior designers and DIY experts. Please send your pitches to editorial@stacklydecor.com for consideration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Call to Action (Reused) -->
+    <section class="cta-section section-padding" style="background-image: linear-gradient(rgba(32,53,40,0.8), rgba(32,53,40,0.8)), url('assets/images/image_013.webp'); background-size: cover; background-position: center; color: white;" data-aos="fade-up">
+        <div class="container center"  data-aos="fade-up">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;" data-aos="fade-up">Ready to Transform Your Home?</h2>
+            <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 40px; opacity: 0.9;">Explore our latest collections and find the perfect pieces to elevate your living space.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="index.html" class="btn btn-primary">Shop Collection</a>
+                <a href="404.html" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="footer">
+        <div class="container"  data-aos="fade-up">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+                    <p class="footer-desc">Curating beautiful spaces with premium quality furniture and decor for the modern home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Categories</h3>
+                    <ul>
+                        <li><a href="404.html">Furniture</a></li>
+                        <li><a href="404.html">Lighting</a></li>
+                        <li><a href="404.html">Wall Decor</a></li>
+                        <li><a href="404.html">Rugs & Carpets</a></li>
+                        <li><a href="404.html">Home Accents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3  data-aos="fade-up">Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Stackly Home Decor Store. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

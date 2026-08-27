@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Our Services</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Animated Luxury Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-ring">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Loading" class="preloader-logo-img" data-aos="zoom-in">
+                <div class="preloader-spinner"></div>
+            </div>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header / Navbar -->
+    <header class="header page-header">
+        <div class="container header-container"  data-aos="fade-up">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline"><i class="fa-regular fa-user"></i> Login</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Banner -->
+    <section class="page-hero" data-aos="fade-up">
+        <div class="page-hero-bg">
+            <img src="assets/images/image_013.webp" alt="Our Services" data-aos="zoom-in">
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="container page-hero-content center"  data-aos="fade-up">
+            <h1>Expert <span class="highlight">Services</span></h1>
+            <p>From complete home makeovers to custom furniture design, we offer everything you need to create your dream space.</p>
+        </div>
+    </section>
+
+    <!-- 2. Services Overview -->
+    <section class="services-overview section-padding" data-aos="fade-up">
+        <div class="container center"  data-aos="fade-up">
+            <span class="subtitle">WHAT WE DO</span>
+            <h2  data-aos="fade-up">Premium Store <span class="highlight-line">Services</span></h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--text-light); font-size: 1.125rem;">
+                At Stackly, we go beyond just selling beautiful furniture. We offer premium services to ensure your shopping experience is seamless, from expert styling advice to white-glove delivery straight to your living room.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Featured Services -->
+    <section class="featured-services section-padding bg-light-cream" style="padding-top: 0;" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-feature-card">
+                    <div class="service-img">
+                        <img src="assets/images/image_079.webp" alt="Styling Advice" data-aos="zoom-in">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <h3  data-aos="fade-up">Free Styling Advice</h3>
+                        <p>Not sure what matches your sofa? Our in-store experts offer free styling tips to help you pick the perfect decor pieces.</p>
+                        <a href="404.html" class="view-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-feature-card">
+                    <div class="service-img">
+                        <img src="assets/images/image_080.webp" alt="White Glove Delivery" data-aos="zoom-in">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3  data-aos="fade-up">White-Glove Delivery</h3>
+                        <p>Sit back and relax. Our delivery team will carefully unbox, assemble, and place your new furniture exactly where you want it.</p>
+                        <a href="404.html" class="view-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-feature-card">
+                    <div class="service-img">
+                        <img src="assets/images/image_081.webp" alt="Custom Upholstery" data-aos="zoom-in">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3  data-aos="fade-up">Custom Upholstery</h3>
+                        <p>Choose from over 100 premium fabrics to customize your chairs, sofas, and headboards to match your unique style.</p>
+                        <a href="404.html" class="view-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Our Process (Redesigned Editorial Bento Layout) -->
+    <section class="process-section stackly-experience-bento section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle"><i class="fa-solid fa-sparkles"></i> HOW IT WORKS</span>
+                <h2  data-aos="fade-up">The Stackly <span class="highlight-line">Experience</span></h2>
+                <p class="bento-header-desc">A seamless journey from initial inspiration to white-glove placement in your home.</p>
+            </div>
+
+            <!-- Bento Matrix Grid -->
+            <div class="bento-matrix-grid">
+                
+                <!-- Bento Card 01: Browse & Select (Span 7) -->
+                <div class="bento-card bento-card-hero" data-aos="flip-left" data-aos-delay="100">
+                    <div class="bento-card-glow" data-aos="flip-left" data-aos-delay="200"></div>
+                    <div class="bento-card-header" data-aos="flip-left" data-aos-delay="300">
+                        <div class="bento-step-num">01</div>
+                        <span class="bento-tag"><i class="fa-solid fa-compass"></i> Step 1 &bull; Discovery</span>
+                    </div>
+                    <div class="bento-card-body" data-aos="flip-left" data-aos-delay="100">
+                        <h3  data-aos="fade-up">Browse & Select</h3>
+                        <p>Explore our curated collections online or in-store to find the perfect pieces for your home.</p>
+                        <div class="bento-visual-tags">
+                            <span class="bento-pill-item"><i class="fa-solid fa-couch"></i> Velvet Sofas</span>
+                            <span class="bento-pill-item"><i class="fa-solid fa-lightbulb"></i> Brass Chandeliers</span>
+                            <span class="bento-pill-item"><i class="fa-solid fa-rug"></i> Wool Rugs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Card 02: Customize (Span 5 - Dark Green Luxury Swatch Card) -->
+                <div class="bento-card bento-card-dark" data-aos="flip-left" data-aos-delay="200">
+                    <div class="bento-card-glow" data-aos="flip-left" data-aos-delay="300"></div>
+                    <div class="bento-card-header" data-aos="flip-left" data-aos-delay="100">
+                        <div class="bento-step-num gold">02</div>
+                        <span class="bento-tag gold"><i class="fa-solid fa-sliders"></i> Step 2 &bull; Tailored</span>
+                    </div>
+                    <div class="bento-card-body" data-aos="flip-left" data-aos-delay="200">
+                        <h3  data-aos="fade-up">Customize</h3>
+                        <p>Work with our specialists to select fabrics, finishes, and dimensions for made-to-order items.</p>
+                        <div class="swatch-preview-grid">
+                            <div class="swatch-pill" title="Emerald Velvet"><span class="swatch-color" style="background: #0f3822;"></span> Velvet</div>
+                            <div class="swatch-pill" title="Warm Bouclé"><span class="swatch-color" style="background: #e8ded1;"></span> Bouclé</div>
+                            <div class="swatch-pill" title="Teak Wood"><span class="swatch-color" style="background: #8b5a2b;"></span> Teak</div>
+                            <div class="swatch-pill" title="Brushed Brass"><span class="swatch-color" style="background: #f5b742;"></span> Brass</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Card 03: Secure Checkout (Span 5 - Security Card) -->
+                <div class="bento-card bento-card-glass" data-aos="flip-left" data-aos-delay="300">
+                    <div class="bento-card-glow" data-aos="flip-left" data-aos-delay="100"></div>
+                    <div class="bento-card-header" data-aos="flip-left" data-aos-delay="200">
+                        <div class="bento-step-num">03</div>
+                        <span class="bento-tag"><i class="fa-solid fa-shield-halved"></i> Step 3 &bull; Seamless</span>
+                    </div>
+                    <div class="bento-card-body" data-aos="flip-left" data-aos-delay="300">
+                        <h3  data-aos="fade-up">Secure Checkout</h3>
+                        <p>Enjoy a seamless and secure checkout process with multiple flexible financing options available.</p>
+                        <div class="bento-security-pills">
+                            <span class="sec-badge"><i class="fa-solid fa-lock"></i> 256-Bit SSL</span>
+                            <span class="sec-badge"><i class="fa-solid fa-percent"></i> 0% APR Financing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Card 04: White-Glove Delivery (Span 7 - Delivery Timeline Card) -->
+                <div class="bento-card bento-card-delivery" data-aos="flip-left" data-aos-delay="100">
+                    <div class="bento-card-glow" data-aos="flip-left" data-aos-delay="200"></div>
+                    <div class="bento-card-header" data-aos="flip-left" data-aos-delay="300">
+                        <div class="bento-step-num">04</div>
+                        <span class="bento-tag green"><i class="fa-solid fa-truck-fast"></i> Step 4 &bull; Fulfillment</span>
+                    </div>
+                    <div class="bento-card-body" data-aos="flip-left" data-aos-delay="100">
+                        <h3  data-aos="fade-up">White-Glove Delivery</h3>
+                        <p>Our professional team delivers, assembles, and places your furniture exactly where you want it.</p>
+                        <div class="bento-delivery-timeline">
+                            <div class="bento-timeline-step completed">
+                                <i class="fa-solid fa-box"></i>
+                                <span>Dispatched</span>
+                            </div>
+                            <div class="bento-timeline-line"></div>
+                            <div class="bento-timeline-step completed">
+                                <i class="fa-solid fa-truck"></i>
+                                <span>In Transit</span>
+                            </div>
+                            <div class="bento-timeline-line"></div>
+                            <div class="bento-timeline-step active">
+                                <i class="fa-solid fa-couch"></i>
+                                <span>Room Placement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 1: Virtual 3D Room Staging Simulator -->
+    <section class="services-virtual-staging section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="staging-split-wrapper">
+                <div class="staging-preview-box">
+                    <img src="assets/images/image_082.webp" alt="3D Staging Render Preview" class="staging-hero-img" data-aos="zoom-in">
+                    <div class="staging-badge-overlay">
+                        <div>
+                            <strong><i class="fa-solid fa-cube"></i> Photorealistic 3D Spatial Staging</strong>
+                            <span>See exact furniture dimensions before you buy</span>
+                        </div>
+                        <span class="badge-status in-stock"><i class="fa-solid fa-check"></i> Interactive Render</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="subtitle"><i class="fa-solid fa-vr-cardboard"></i> VIRTUAL INTERIOR DESIGN</span>
+                    <h2  data-aos="fade-up">Visualize Your Space in <span class="highlight-line">3D</span></h2>
+                    <p style="color: var(--text-light); line-height: 1.65; margin-bottom: 20px;">Upload your floor plan or room photos to collaborate with our master interior stylists in a live 3D photorealistic workspace.</p>
+
+                    <div class="staging-tiers-list">
+                        <div class="staging-tier-item">
+                            <div class="staging-tier-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                            <div class="staging-tier-info">
+                                <h4  data-aos="fade-up">1. Digital Moodboard & Palette</h4>
+                                <p>Custom color palette, fabric swatches, and lighting layout specs.</p>
+                            </div>
+                        </div>
+
+                        <div class="staging-tier-item">
+                            <div class="staging-tier-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="staging-tier-info">
+                                <h4  data-aos="fade-up">2. 3D Spatial Floorplan Render</h4>
+                                <p>Exact scale furniture placement with clearance pathing.</p>
+                            </div>
+                        </div>
+
+                        <div class="staging-tier-item">
+                            <div class="staging-tier-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                            <div class="staging-tier-info">
+                                <h4  data-aos="fade-up">3. Curated Shopping List & Credits</h4>
+                                <p>Instant 1-click cart loading with $100 styling credit applied.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="404.html" class="btn btn-primary">Book Free 15-Min Staging Session <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Trade & Commercial Interior Partnerships -->
+    <section class="services-trade-program section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="trade-wrapper">
+                <div class="trade-header center">
+                    <span class="subtitle"><i class="fa-solid fa-briefcase"></i> B2B TRADE PROGRAM</span>
+                    <h2  data-aos="fade-up">Commercial & Designer <span class="highlight">Partnerships</span></h2>
+                    <p style="color: rgba(255,255,255,0.8); max-width: 580px; margin: 10px auto 0 auto;">Dedicated interior solutions for architects, boutique hotels, real estate developers, and trade stylists.</p>
+                </div>
+
+                <div class="trade-perks-grid">
+                    <div class="trade-perk-card">
+                        <i class="fa-solid fa-percent"></i>
+                        <h4  data-aos="fade-up">Tiered Trade Discounts</h4>
+                        <p>Save up to 35% MSRP on bulk furniture orders, custom upholstery, and contract lighting.</p>
+                    </div>
+
+                    <div class="trade-perk-card">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <h4  data-aos="fade-up">Dedicated Concierge</h4>
+                        <p>Direct priority access to a dedicated trade account representative for procurement and freight scheduling.</p>
+                    </div>
+
+                    <div class="trade-perk-card">
+                        <i class="fa-solid fa-sliders"></i>
+                        <h4  data-aos="fade-up">Custom Fabric Milling</h4>
+                        <p>MOM/COM fabric integration, custom wood stains, and commercial grade stain-resistant finishes.</p>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <a href="404.html" class="btn btn-primary">Apply for Trade Account Access <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- 6. Stackly Memberships -->
+    <section class="packages-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle">JOIN THE CLUB</span>
+                <h2  data-aos="fade-up">Stackly <span class="highlight-line">Memberships</span></h2>
+                <p>Unlock exclusive perks, free shipping, and VIP support with our store memberships.</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3  data-aos="fade-up">Silver Insider</h3>
+                        <div class="package-price"><span>$</span>49</div>
+                        <p>Per Year</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Free Standard Shipping</li>
+                            <li><i class="fa-solid fa-check"></i> 30-Day Extended Returns</li>
+                            <li><i class="fa-solid fa-check"></i> Birthday Gift (10% Off)</li>
+                            <li><i class="fa-solid fa-check"></i> Early Access to Sales</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Dedicated Style Consultant</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Free White-Glove Delivery</li>
+                        </ul>
+                        <a href="404.html" class="btn btn-outline package-btn">Join Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 (Featured) -->
+                <div class="package-card featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3  data-aos="fade-up">Gold Member</h3>
+                        <div class="package-price"><span>$</span>149</div>
+                        <p>Per Year</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Free Standard Shipping</li>
+                            <li><i class="fa-solid fa-check"></i> 90-Day Extended Returns</li>
+                            <li><i class="fa-solid fa-check"></i> Flat 10% Off All Orders</li>
+                            <li><i class="fa-solid fa-check"></i> VIP Early Access to New Collections</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Free Room Styling Consultation</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Free White-Glove Delivery</li>
+                        </ul>
+                        <a href="404.html" class="btn btn-primary package-btn">Join Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3  data-aos="fade-up">Trade Partner</h3>
+                        <div class="package-price">Free</div>
+                        <p>For Professionals</p>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Up to 25% Trade Discount</li>
+                            <li><i class="fa-solid fa-check"></i> Tax-Exempt Purchasing</li>
+                            <li><i class="fa-solid fa-check"></i> Dedicated Account Manager</li>
+                            <li><i class="fa-solid fa-check"></i> Free Fabric & Finish Swatches</li>
+                            <li><i class="fa-solid fa-check"></i> Custom Ordering Priority</li>
+                            <li><i class="fa-solid fa-check"></i> Free White-Glove Delivery (Orders > $2k)</li>
+                        </ul>
+                        <a href="404.html" class="btn btn-outline package-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Planner CTA (Redesigned Editorial 3D Studio Canvas & Floating AR Widget Matrix) -->
+    <section class="room-planner-cta section-padding planner-studio-section" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="planner-studio-canvas">
+                
+                <!-- Left Column: Interactive Control Studio -->
+                <div class="planner-studio-content">
+                    <span class="subtitle gold-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> DESIGN IT YOURSELF &bull; 3D STUDIO</span>
+                    <h2  data-aos="fade-up">Interactive Room <span class="highlight-line">Planner</span></h2>
+                    <p class="planner-desc">Take full control of your space with our free interactive 3D room planner. Drag, drop, and customize Stackly furniture in a virtual room matching your exact dimensions before you buy.</p>
+                    
+                    <div class="planner-features-matrix">
+                        <!-- Feature 1 -->
+                        <div class="planner-feature-card">
+                            <div class="planner-feature-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Custom Room Dimensions</h4>
+                                <p>Set precise wall lengths, door placement, and window ceiling heights.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="planner-feature-card">
+                            <div class="planner-feature-icon"><i class="fa-solid fa-couch"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">1,000+ 3D Furniture Models</h4>
+                                <p>Access photorealistic 3D models with real fabric and finish textures.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="planner-feature-card">
+                            <div class="planner-feature-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">View in Augmented Reality</h4>
+                                <p>Project 1:1 scale virtual furniture directly into your actual home via smartphone.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="404.html" class="btn btn-primary planner-cta-btn">Launch 3D Planner Tool <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Right Column: Overlapping Layered 3D Showcase Media -->
+                <div class="planner-studio-media">
+                    <div class="planner-media-box">
+                        <img src="assets/images/image_082.webp" alt="Stackly 3D Room Planner Studio" class="planner-hero-img" data-aos="zoom-in">
+                        <div class="planner-media-overlay"></div>
+                        
+                        <!-- Floating Glass Widget 1: Live AR Render -->
+                        <div class="floating-ar-widget widget-top">
+                            <div class="widget-icon"><i class="fa-solid fa-cube"></i></div>
+                            <div>
+                                <strong>Live 3D Rendering</strong>
+                                <span>60 FPS &bull; Real-time Lighting</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Widget 2: Spatial Scale -->
+                        <div class="floating-ar-widget widget-bottom">
+                            <div class="widget-icon green"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
+                            <div>
+                                <strong>Spatial Scale: 14' &times; 18'</strong>
+                                <span>Drag &amp; Drop Active</span>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Shop Our Lookbooks -->
+    <section class="portfolio-section section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header flex-between" data-aos="zoom-in-up">
+                <div>
+                    <span class="subtitle">GET INSPIRED</span>
+                    <h2  data-aos="fade-up">Shop Our <span class="highlight-line">Lookbooks</span></h2>
+                </div>
+           </div>
+            
+            <div class="portfolio-grid">
+                <a href="404.html" class="portfolio-item wide" data-aos="flip-left" data-aos-delay="100">
+                    <img src="assets/images/image_083.webp" alt="Modern Living" data-aos="zoom-in">
+                    <div class="portfolio-overlay">
+                        <h3  data-aos="fade-up">Modern Minimalist Living Room</h3>
+                        <p>Shop this look</p>
+                    </div>
+                </a>
+                <a href="404.html" class="portfolio-item" data-aos="flip-left" data-aos-delay="200">
+                    <img src="assets/images/image_021.webp" alt="Kitchen Remodel" data-aos="zoom-in">
+                    <div class="portfolio-overlay">
+                        <h3  data-aos="fade-up">Scandinavian Kitchen</h3>
+                        <p>Shop this look</p>
+                    </div>
+                </a>
+                <a href="404.html" class="portfolio-item" data-aos="flip-left" data-aos-delay="300">
+                    <img src="assets/images/image_064.webp" alt="Bedroom Cozy" data-aos="zoom-in">
+                    <div class="portfolio-overlay">
+                        <h3  data-aos="fade-up">Cozy Master Suite</h3>
+                        <p>Shop this look</p>
+                    </div>
+                </a>
+                <a href="404.html" class="portfolio-item wide" data-aos="flip-left" data-aos-delay="100">
+                    <img src="assets/images/image_084.webp" alt="Dining Area" data-aos="zoom-in">
+                    <div class="portfolio-overlay">
+                        <h3  data-aos="fade-up">Mid-Century Dining</h3>
+                        <p>Shop this look</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 8. Customer Testimonials (3D Center Spotlight Avatar Stage Slider) -->
+    <section class="testimonials section-padding testi-stage-section" id="testiStageSection" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle"><i class="fa-solid fa-star"></i> TESTIMONIAL STAGE</span>
+                <h2  data-aos="fade-up">What Our Customers <span class="highlight-line">Say</span></h2>
+                <p style="max-width: 520px; margin: 8px auto 24px auto; color: var(--text-light);">Select a customer profile below or let the stage auto-play through authentic reviews.</p>
+            </div>
+            
+            
+
+            <!-- 3D Center Stage Slider Container -->
+            <div class="stage-slider-wrapper">
+                
+                <!-- Floating Side Prev/Next Arrows -->
+                <button class="stage-arrow-btn prev" id="stagePrevBtn" aria-label="Previous Review"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="stage-arrow-btn next" id="stageNextBtn" aria-label="Next Review"><i class="fa-solid fa-chevron-right"></i></button>
+
+                <!-- Stage Cards -->
+                <div class="stage-cards-container"  data-aos="fade-up">
+                    
+                    <!-- Review 0: Sarah Jenkins -->
+                    <div class="stage-card active" data-index="0">
+                        <div class="stage-card-inner">
+                            <div class="stage-card-header">
+                                <div class="stage-user">
+                                    <img src="assets/images/image_006.webp" alt="Sarah Jenkins" class="stage-avatar" data-aos="zoom-in">
+                                    <div>
+                                        <h3  data-aos="fade-up">Sarah Jenkins</h3>
+                                        <span class="stage-location"><i class="fa-solid fa-location-dot"></i> New York, NY &bull; Verified Homeowner</span>
+                                    </div>
+                                </div>
+                                <div class="stage-tags">
+                                    <span class="stage-badge item"><i class="fa-solid fa-couch"></i> Living Sanctuary Set</span>
+                                    <span class="stage-badge rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stage-quote-box">
+                                <i class="fa-solid fa-quote-left stage-quote-icon"></i>
+                                <p class="stage-quote-text">"The quality of the furniture is outstanding. It completely transformed my living room into a sanctuary. Highly recommend Stackly to anyone looking for premium decor!"</p>
+                            </div>
+
+                            <div class="stage-card-footer">
+                                <div class="footer-highlight">
+                                    <i class="fa-solid fa-circle-check"></i> <span>Verified Purchase &bull; Delivered via White-Glove</span>
+                                </div>
+                                <span class="review-date">Aug 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 1: Emily Rodriguez -->
+                    <div class="stage-card" data-index="1">
+                        <div class="stage-card-inner">
+                            <div class="stage-card-header">
+                                <div class="stage-user">
+                                    <img src="assets/images/image_008.webp" alt="Emily Rodriguez" class="stage-avatar" data-aos="zoom-in">
+                                    <div>
+                                        <h3  data-aos="fade-up">Emily Rodriguez</h3>
+                                        <span class="stage-location"><i class="fa-solid fa-location-dot"></i> Austin, TX &bull; Verified Homeowner</span>
+                                    </div>
+                                </div>
+                                <div class="stage-tags">
+                                    <span class="stage-badge item"><i class="fa-solid fa-layer-group"></i> Curated Collection</span>
+                                    <span class="stage-badge rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stage-quote-box">
+                                <i class="fa-solid fa-quote-left stage-quote-icon"></i>
+                                <p class="stage-quote-text">"I love the curated collections. It makes finding matching pieces so incredibly easy. My home looks like it was styled by a professional interior designer!"</p>
+                            </div>
+
+                            <div class="stage-card-footer">
+                                <div class="footer-highlight">
+                                    <i class="fa-solid fa-circle-check"></i> <span>Verified Purchase &bull; 3D Staging Consultation</span>
+                                </div>
+                                <span class="review-date">Aug 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2: Marcus Vance -->
+                    <div class="stage-card" data-index="2">
+                        <div class="stage-card-inner">
+                            <div class="stage-card-header">
+                                <div class="stage-user">
+                                    <img src="assets/images/image_086.webp" alt="Marcus Vance" class="stage-avatar" data-aos="zoom-in">
+                                    <div>
+                                        <h3  data-aos="fade-up">Marcus Vance</h3>
+                                        <span class="stage-location"><i class="fa-solid fa-location-dot"></i> Chicago, IL &bull; Custom Woodwork Client</span>
+                                    </div>
+                                </div>
+                                <div class="stage-tags">
+                                    <span class="stage-badge item"><i class="fa-solid fa-tree"></i> Solid Teak Dining Table</span>
+                                    <span class="stage-badge rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stage-quote-box">
+                                <i class="fa-solid fa-quote-left stage-quote-icon"></i>
+                                <p class="stage-quote-text">"Ordering a custom solid teak dining table was effortless. The white-glove setup team was punctual, respectful, and left the dining room spotless!"</p>
+                            </div>
+
+                            <div class="stage-card-footer">
+                                <div class="footer-highlight">
+                                    <i class="fa-solid fa-circle-check"></i> <span>Bespoke Milling &bull; FSC Certified Teak</span>
+                                </div>
+                                <span class="review-date">Jul 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3: Elena Rostova -->
+                    <div class="stage-card" data-index="3">
+                        <div class="stage-card-inner">
+                            <div class="stage-card-header">
+                                <div class="stage-user">
+                                    <img src="assets/images/image_011.webp" alt="Elena Rostova" class="stage-avatar" data-aos="zoom-in">
+                                    <div>
+                                        <h3  data-aos="fade-up">Elena Rostova</h3>
+                                        <span class="stage-location"><i class="fa-solid fa-location-dot"></i> Miami, FL &bull; Trade Partner Architect</span>
+                                    </div>
+                                </div>
+                                <div class="stage-tags">
+                                    <span class="stage-badge item"><i class="fa-solid fa-briefcase"></i> Commercial B2B Project</span>
+                                    <span class="stage-badge rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stage-quote-box">
+                                <i class="fa-solid fa-quote-left stage-quote-icon"></i>
+                                <p class="stage-quote-text">"As an interior designer, joining the Trade Partner program was a no-brainer. The dedicated account manager makes sourcing items for my clients so easy!"</p>
+                            </div>
+
+                            <div class="stage-card-footer">
+                                <div class="footer-highlight">
+                                    <i class="fa-solid fa-circle-check"></i> <span>Trade Partner Account &bull; 35% Discount Tier</span>
+                                </div>
+                                <span class="review-date">Jul 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4: David Martinez -->
+                    <div class="stage-card" data-index="4">
+                        <div class="stage-card-inner">
+                            <div class="stage-card-header">
+                                <div class="stage-user">
+                                    <img src="assets/images/image_012.webp" alt="David Martinez" class="stage-avatar" data-aos="zoom-in">
+                                    <div>
+                                        <h3  data-aos="fade-up">David Martinez</h3>
+                                        <span class="stage-location"><i class="fa-solid fa-location-dot"></i> Seattle, WA &bull; Verified Homeowner</span>
+                                    </div>
+                                </div>
+                                <div class="stage-tags">
+                                    <span class="stage-badge item"><i class="fa-solid fa-lightbulb"></i> Brushed Brass Chandelier</span>
+                                    <span class="stage-badge rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stage-quote-box">
+                                <i class="fa-solid fa-quote-left stage-quote-icon"></i>
+                                <p class="stage-quote-text">"I couldn't be happier with the lighting fixtures. They were incredibly easy to install and they instantly elevated the mood in our dining room!"</p>
+                            </div>
+
+                            <div class="stage-card-footer">
+                                <div class="footer-highlight">
+                                    <i class="fa-solid fa-circle-check"></i> <span>Verified Purchase &bull; Express Shipping</span>
+                                </div>
+                                <span class="review-date">Jun 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Live Auto Progress Bar Indicator -->
+                <div class="stage-progress-container"  data-aos="fade-up">
+                    <div class="stage-progress-fill" id="stageProgressFill"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ (Reused) -->
+    <section class="faq-section section-padding bg-light-cream" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Frequently Asked <span class="highlight-line">Questions</span></h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>How long do custom upholstery orders take?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Because custom items are made to order, they typically take 4 to 8 weeks to craft and deliver. We will keep you updated throughout the manufacturing process.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>How does White-Glove Delivery work?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Our delivery team will bring the items into your home, assemble them in your room of choice, and remove all packaging materials. This service is included free for Gold Members and Trade Partners on orders over $2k.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Can I cancel my membership?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, you can cancel your Silver or Gold membership at any time from your account settings. The benefits will remain active until the end of your current billing year.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Call to Action (Reused) -->
+    <section class="cta-section section-padding" style="background-image: linear-gradient(rgba(32,53,40,0.8), rgba(32,53,40,0.8)), url('assets/images/image_048.webp'); background-size: cover; background-position: center; color: white;" data-aos="fade-up">
+        <div class="container center"  data-aos="fade-up">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;" data-aos="fade-up">Elevate Your Shopping Experience</h2>
+            <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 40px; opacity: 0.9;">Become a Stackly Member today to unlock exclusive perks, free shipping, and more.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="404.html" class="btn btn-primary">Join the Club</a>
+                <a href="index.html" class="btn btn-outline">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer class="footer">
+        <div class="container"  data-aos="fade-up">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+                    <p class="footer-desc">Curating beautiful spaces with premium quality furniture and decor for the modern home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Categories</h3>
+                    <ul>
+                        <li><a href="404.html">Furniture</a></li>
+                        <li><a href="404.html">Lighting</a></li>
+                        <li><a href="404.html">Wall Decor</a></li>
+                        <li><a href="404.html">Rugs & Carpets</a></li>
+                        <li><a href="404.html">Home Accents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3  data-aos="fade-up">Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Stackly Home Decor Store. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

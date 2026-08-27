@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Stackly Home Decor Store</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Auth & Dashboard CSS -->
+    <link rel="stylesheet" href="styles-auth-dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img">
+                </a>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-menu">
+                <span class="menu-category-title">Navigation</span>
+                
+                <a href="404.html" class="nav-item active" data-tab="tab-user-overview">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span>Account Overview</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-user-orders">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>My Orders</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-user-wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Wishlist & Saved Items</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-user-analytics">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Decor Analytics</span>
+                </a>
+                
+                <a href="404.html" class="nav-item" data-tab="tab-user-profile">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Profile Settings</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Bottom User Profile Card & Logout -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user-card">
+                    <div class="sidebar-avatar-circle">U</div>
+                    <div class="sidebar-user-info">
+                        <span class="sidebar-user-name">Sophia Reynolds</span>
+                        <span class="sidebar-user-email">sophia.reynolds@example.com</span>
+                    </div>
+                </div>
+                <a href="login.html" class="sidebar-logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <div class="dashboard-main">
+
+            <!-- Topbar Header -->
+            <header class="dashboard-topbar" data-aos="fade-down">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="topbar-page-title" id="currentTabTitle">Account Overview</h2>
+                </div>
+
+                <div class="topbar-right">
+                    <!-- User Profile Summary -->
+                    <div class="topbar-user-badge">
+                        <div class="topbar-user-text">
+                            <span class="name">Sophia Reynolds</span>
+                            <span class="email">sophia.reynolds@example.com</span>
+                        </div>
+                        <div class="topbar-avatar-circle">U</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Container -->
+            <main class="dashboard-content">
+
+                <!-- ============================================================
+                     TAB 1: ACCOUNT OVERVIEW
+                     ============================================================ -->
+                <div class="dashboard-tab-content active" id="tab-user-overview">
+                    
+                    <div class="dashboard-header-banner" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Welcome Back, Sophia!</h1>
+                            <p>Track active deliveries, manage your wishlist, and inspect your home decor spending.</p>
+                        </div>
+                        <div class="banner-actions">
+                            <a href="index.html" class="btn-primary-action">
+                                <i class="fa-solid fa-sparkles"></i> Browse New Arrivals
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Personal KPI Overview Cards -->
+                    <section class="kpi-cards-grid">
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Total Orders</span>
+                                <div class="kpi-icon-box green"><i class="fa-solid fa-box-open"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">14</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-check"></i> Lifetime</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Saved Wishlist</span>
+                                <div class="kpi-icon-box yellow"><i class="fa-solid fa-heart"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">6 Items</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-tag"></i> 2 On Sale</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Total Spent</span>
+                                <div class="kpi-icon-box blue"><i class="fa-solid fa-wallet"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">$2,630</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-crown"></i> Gold Tier</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="kpi-card-header">
+                                <span class="kpi-title">Active Delivery</span>
+                                <div class="kpi-icon-box purple"><i class="fa-solid fa-truck-fast"></i></div>
+                            </div>
+                            <div class="kpi-value-box">
+                                <span class="kpi-value">1 Package</span>
+                                <span class="kpi-trend positive"><i class="fa-solid fa-clock"></i> Aug 24</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Purchase Trend Line Chart -->
+                    <section class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-chart-line"></i> Annual Purchase Trend (Line Chart)</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="userOverviewTrendChart"></canvas>
+                        </div>
+                    </section>
+
+                    <!-- Live Stepper Delivery Card -->
+                    <section class="order-tracker-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="tracker-header">
+                            <div class="tracker-header-info">
+                                <h3 class="tracker-title">
+                                    <i class="fa-solid fa-truck-ramp-box" style="color: #f5b742;"></i> Live Delivery Stepper
+                                </h3>
+                                <p class="tracker-subtitle">Order <strong>#STK-89239</strong> &bull; Handwoven Wool Rug & Velvet Pillows</p>
+                            </div>
+                            <span class="badge-status shipped"><i class="fa-solid fa-truck-fast"></i> In Transit</span>
+                        </div>
+
+                        <div class="tracker-stepper-wrapper">
+                            <div class="tracker-stepper">
+                                <div class="tracker-stepper-progress" style="width: 66%;"></div>
+
+                                <div class="step-item completed">
+                                    <div class="step-icon"><i class="fa-solid fa-receipt"></i></div>
+                                    <span class="step-title">Order Placed</span>
+                                    <span class="step-date">Aug 21, 09:30 AM</span>
+                                </div>
+
+                                <div class="step-item completed">
+                                    <div class="step-icon"><i class="fa-solid fa-box"></i></div>
+                                    <span class="step-title">Packed</span>
+                                    <span class="step-date">Aug 21, 03:15 PM</span>
+                                </div>
+
+                                <div class="step-item active">
+                                    <div class="step-icon"><i class="fa-solid fa-truck"></i></div>
+                                    <span class="step-title">In Transit</span>
+                                    <span class="step-date">Aug 22, 10:45 AM</span>
+                                </div>
+
+                                <div class="step-item">
+                                    <div class="step-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+                                    <span class="step-title">Delivered</span>
+                                    <span class="step-date">Est. Aug 24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 2-Column Grid: Recent Purchases Quick List & Saved Shipping Addresses -->
+                    <section class="charts-grid-equal">
+                        <!-- Recent Purchases Quick List -->
+                        <div class="table-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-bag-shopping"></i> Recent Purchases</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <!-- Item 1 -->
+                                <div class="recent-purchase-item">
+                                    <div class="recent-purchase-info">
+                                        <img src="assets/images/image_014.webp" alt="Chair">
+                                        <div class="recent-purchase-text">
+                                            <strong>Velvet Ergonomic Lounge Chair</strong>
+                                            <p style="font-size: 0.75rem; color: #6b7280; margin: 2px 0 0 0;">Purchased Jul 14, 2026</p>
+                                        </div>
+                                    </div>
+                                    <div class="recent-purchase-action">
+                                        <strong style="color: #203528; font-size: 0.9rem;">$349.00</strong>
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';">Buy Again</button>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="recent-purchase-item">
+                                    <div class="recent-purchase-info">
+                                        <img src="assets/images/image_016.webp" alt="Light">
+                                        <div class="recent-purchase-text">
+                                            <strong>Nordic Brass Pendant Chandelier</strong>
+                                            <p style="font-size: 0.75rem; color: #6b7280; margin: 2px 0 0 0;">Purchased Jun 28, 2026</p>
+                                        </div>
+                                    </div>
+                                    <div class="recent-purchase-action">
+                                        <strong style="color: #203528; font-size: 0.9rem;">$189.50</strong>
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';">Buy Again</button>
+                                    </div>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div class="recent-purchase-item">
+                                    <div class="recent-purchase-info">
+                                        <img src="assets/images/image_088.webp" alt="Rug">
+                                        <div class="recent-purchase-text">
+                                            <strong>Handwoven Wool Accent Rug</strong>
+                                            <p style="font-size: 0.75rem; color: #6b7280; margin: 2px 0 0 0;">Purchased May 24, 2026</p>
+                                        </div>
+                                    </div>
+                                    <div class="recent-purchase-action">
+                                        <strong style="color: #203528; font-size: 0.9rem;">$215.00</strong>
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';">Buy Again</button>
+                                    </div>
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div class="recent-purchase-item">
+                                    <div class="recent-purchase-info">
+                                        <img src="assets/images/image_089.webp" alt="Vase">
+                                        <div class="recent-purchase-text">
+                                            <strong>Matte Clay Decorative Vases</strong>
+                                            <p style="font-size: 0.75rem; color: #6b7280; margin: 2px 0 0 0;">Purchased Apr 18, 2026</p>
+                                        </div>
+                                    </div>
+                                    <div class="recent-purchase-action">
+                                        <strong style="color: #203528; font-size: 0.9rem;">$95.00</strong>
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';">Buy Again</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Shipping Addresses Card -->
+                        <div class="table-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-location-dot"></i> Saved Shipping Addresses</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 14px;">
+                                <div class="address-card">
+                                    <div class="address-card-header">
+                                        <strong style="font-size: 0.92rem; color: #203528; margin: 0;">Sophia Reynolds</strong>
+                                        <span class="address-badge"><i class="fa-solid fa-star"></i> Default Home</span>
+                                    </div>
+                                    <p style="font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5;">742 Evergreen Terrace, Apt 4B<br>Springfield, OR 97477 &bull; United States</p>
+                                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                    </div>
+                                </div>
+
+                                <div class="address-card">
+                                    <div class="address-card-header">
+                                        <strong style="font-size: 0.92rem; color: #203528; margin: 0;">Office / Studio</strong>
+                                    </div>
+                                    <p style="font-size: 0.82rem; color: #6b7280; margin: 0; line-height: 1.5;">100 Grand Avenue, Suite 1200<br>Portland, OR 97204 &bull; United States</p>
+                                    <div style="display: flex; gap: 8px; margin-top: 6px;">
+                                        <button class="btn-card-action" onclick="window.location.href='404.html';"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 2: MY ORDERS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-user-orders">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #1f3326 0%, #111e16 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Order History & Fulfillment Analytics</h1>
+                            <p>Review past decor purchases, live courier tracking, and download invoice receipts.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <!-- Delivery Speed Chart -->
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-column"></i> Average Delivery Speed Breakdown (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="userOrderFulfillmentChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Live Courier Tracking Card -->
+                        <div class="chart-card" style="border-left: 4px solid #3b82f6;" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3 style="color: #2563eb;"><i class="fa-solid fa-truck-fast"></i> Live Courier Tracking</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin: auto 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #eff6ff; border-radius: 10px;">
+                                    <div>
+                                        <strong style="font-size: 0.9rem; color: #1e40af;">FedEx Express #FDX-9948201</strong>
+                                        <p style="font-size: 0.78rem; color: #6b7280; margin: 2px 0 0 0;">In transit from Seattle Distribution Hub</p>
+                                    </div>
+                                    <span class="badge-status shipped" style="font-size: 0.75rem;"><i class="fa-solid fa-truck"></i> On Schedule</span>
+                                </div>
+
+                                <div style="display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; background: #f8fafc; border-radius: 8px; font-size: 0.78rem;">
+                                    <div style="display: flex; justify-content: space-between; color: #475569;">
+                                        <span><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Depot Departure</span>
+                                        <span>Aug 21, 09:30 AM</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; color: #1e293b; font-weight: 600;">
+                                        <span><i class="fa-solid fa-location-dot" style="color: #3b82f6;"></i> Sorting Hub (Seattle)</span>
+                                        <span style="color: #3b82f6;">Aug 22, 10:45 AM</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; color: #94a3b8;">
+                                        <span><i class="fa-regular fa-circle"></i> Out for Delivery</span>
+                                        <span>Est. Aug 24</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; padding: 0 2px;">
+                                    <span style="color: #6b7280;">Delivery ETA:</span>
+                                    <span style="color: #10b981;">Monday, Aug 24 (By 4:00 PM)</span>
+                                </div>
+
+                                <div style="font-size: 0.75rem; color: #6b7280; display: flex; align-items: center; gap: 6px; background: #f1f5f9; padding: 6px 10px; border-radius: 6px;">
+                                    <i class="fa-solid fa-shield-heart" style="color: #f5b742;"></i> Special Note: Leave package at front porch
+                                </div>
+
+                                <button class="btn-primary-action" style="width: 100%; font-size: 0.85rem; padding: 10px; margin-top: 2px; justify-content: center; text-align: center;" onclick="window.location.href='404.html';">
+                                    <i class="fa-solid fa-map-location-dot"></i> View Real-Time GPS Tracking
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Order Receipts History Table -->
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-clock-rotate-left"></i> Order Receipts History</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Date</th>
+                                        <th>Decor Items Purchased</th>
+                                        <th>Total Paid</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#STK-89239</strong></td>
+                                        <td>Aug 21, 2026</td>
+                                        <td>Handwoven Wool Rug + 2 Velvet Cushions</td>
+                                        <td><strong>$215.00</strong></td>
+                                        <td><span class="badge-status shipped"><i class="fa-solid fa-truck-fast"></i> In Transit</span></td>
+                                        <td>
+                                            <button class="btn-table-icon" title="Invoice PDF" onclick="window.location.href='404.html';"><i class="fa-solid fa-receipt"></i></button>
+                                            <button class="btn-table-icon" title="Track Package" onclick="window.location.href='404.html';"><i class="fa-solid fa-location-dot"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#STK-87102</strong></td>
+                                        <td>Jul 14, 2026</td>
+                                        <td>Modern Marble Top Coffee Table</td>
+                                        <td><strong>$680.00</strong></td>
+                                        <td><span class="badge-status delivered"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                                        <td>
+                                            <button class="btn-table-icon" title="Invoice PDF" onclick="window.location.href='404.html';"><i class="fa-solid fa-receipt"></i></button>
+                                            <button class="btn-table-icon" title="Reorder" onclick="window.location.href='404.html';"><i class="fa-solid fa-rotate-right"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#STK-85410</strong></td>
+                                        <td>Jun 28, 2026</td>
+                                        <td>Brass Pendant Chandelier + Ceramic Vases</td>
+                                        <td><strong>$348.50</strong></td>
+                                        <td><span class="badge-status delivered"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                                        <td>
+                                            <button class="btn-table-icon" title="Invoice PDF" onclick="window.location.href='404.html';"><i class="fa-solid fa-receipt"></i></button>
+                                            <button class="btn-table-icon" title="Reorder" onclick="window.location.href='404.html';"><i class="fa-solid fa-rotate-right"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#STK-82109</strong></td>
+                                        <td>May 10, 2026</td>
+                                        <td>Velvet Ergonomic Lounge Chair (Emerald Green)</td>
+                                        <td><strong>$420.00</strong></td>
+                                        <td><span class="badge-status delivered"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                                        <td>
+                                            <button class="btn-table-icon" title="Invoice PDF" onclick="window.location.href='404.html';"><i class="fa-solid fa-receipt"></i></button>
+                                            <button class="btn-table-icon" title="Reorder" onclick="window.location.href='404.html';"><i class="fa-solid fa-rotate-right"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 3: WISHLIST & SAVED ITEMS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-user-wishlist">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #273b2d 0%, #15241a 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>My Saved Wishlist & Category Insights</h1>
+                            <p>Browse saved furniture, lighting, and decor accents for your home projects.</p>
+                        </div>
+                    </div>
+
+                    <section class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-pie-chart"></i> Wishlist Category Breakdown (Doughnut Chart)</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="userWishlistCategoryChart"></canvas>
+                        </div>
+                    </section>
+
+                    <!-- Wishlist Products Grid -->
+                    <section class="table-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Saved Items (6 Products)</h3>
+                        </div>
+                        <div class="wishlist-grid">
+                            <!-- Product 1 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_090.webp" alt="Chair">
+                                    <span class="sale-discount-tag">15% OFF</span>
+                               </div>
+                                <div class="wishlist-body">
+                                    <h4>Velvet Lounge Chair</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (4.9)</div>
+                                    <div class="wishlist-price">$349.00</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_091.webp" alt="Lighting">
+                                </div>
+                                <div class="wishlist-body">
+                                    <h4>Brass Pendant Light</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> (4.7)</div>
+                                    <div class="wishlist-price">$189.50</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_092.webp" alt="Rug">
+                                    <span class="sale-discount-tag">NEW</span>
+                               </div>
+                                <div class="wishlist-body">
+                                    <h4>Handwoven Wool Rug</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (5.0)</div>
+                                    <div class="wishlist-price">$215.00</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="250">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_093.webp" alt="Table">
+                                </div>
+                                <div class="wishlist-body">
+                                    <h4>Marble Top Coffee Table</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> (4.8)</div>
+                                    <div class="wishlist-price">$680.00</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_094.webp" alt="Vase">
+                                    <span class="sale-discount-tag">20% OFF</span>
+                                </div>
+                                <div class="wishlist-body">
+                                    <h4>Matte Clay Vase Set</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> (4.2)</div>
+                                    <div class="wishlist-price">$95.00</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <!-- Product 6 -->
+                            <div class="wishlist-card" data-aos="zoom-in" data-aos-delay="350">
+                                <div class="wishlist-img-box">
+                                    <img src="assets/images/image_095.webp" alt="Mirror">
+                               </div>
+                                <div class="wishlist-body">
+                                    <h4>Nordic Brass Wall Mirror</h4>
+                                    <div style="font-size: 0.8rem; color: #f5b742; margin-bottom: 4px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> (4.6)</div>
+                                    <div class="wishlist-price">$140.00</div>
+                                    <button class="btn-add-cart" onclick="window.location.href='404.html';"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 4: DECOR ANALYTICS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-user-analytics">
+                    <div class="dashboard-header-banner" style="background: linear-gradient(135deg, #1b2f23 0%, #0e1b12 100%);" data-aos="fade-down" data-aos-delay="100">
+                        <div class="banner-text">
+                            <h1>Personal Decor Spending Analytics</h1>
+                            <p>Track your home styling budget, purchase distribution, and VIP discount savings.</p>
+                        </div>
+                    </div>
+
+                    <section class="charts-grid-equal">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-line"></i> Monthly Decor Spending (Line Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="userSpendingChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Spending by Category (Pie Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="userCategoryChart"></canvas>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="charts-grid-2">
+                        <div class="chart-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-tags"></i> VIP Discount Savings ($) (Bar Chart)</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="userSavingsChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- VIP Loyalty Rewards Card -->
+                        <div class="table-card vip-rewards-card" style="background: #ffffff !important; color: #203528 !important; border: 1px solid rgba(32, 53, 40, 0.08);">
+                            <div style="display: flex; flex-direction: column; gap: 14px; margin: auto 0;">
+                                <h3 style="font-size: 1.15rem; margin: 0; color: #d9910d !important; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fa-solid fa-crown" style="color: #f5b742;"></i> VIP Loyalty Rewards
+                                </h3>
+                                
+                                <div>
+                                    <p style="margin: 0 0 6px 0; color: #203528 !important; font-size: 0.9rem; font-weight: 600;">
+                                        Balance: <strong style="color: #203528 !important; font-weight: 800;">2,630 Points</strong> <span style="color: #6b7280; font-size: 0.82rem;">($26.30 Store Credit)</span>
+                                    </p>
+                                    <div class="progress-bar-container" style="width: 100%; height: 8px; background: rgba(32, 53, 40, 0.08); border-radius: 4px; overflow: hidden;">
+                                        <div class="progress-bar-fill" style="width: 87.6%; height: 100%; background: #f5b742; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="font-size: 0.78rem; color: #6b7280 !important; font-weight: 600; display: block; margin-top: 6px;">
+                                        370 points to unlock $50 VIP Reward Voucher
+                                    </span>
+                                </div>
+
+                                <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fdfaf6 !important; border: 1px solid rgba(32, 53, 40, 0.08); border-radius: 12px; font-size: 0.82rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #203528 !important; font-weight: 600;"><i class="fa-solid fa-truck-fast" style="color: #d9910d; margin-right: 6px;"></i> Free Express Shipping</span>
+                                        <span style="color: #10b981 !important; font-weight: 700;">Active</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #203528 !important; font-weight: 600;"><i class="fa-solid fa-gift" style="color: #d9910d; margin-right: 6px;"></i> Birthday $25 Coupon</span>
+                                        <span style="color: #d9910d !important; font-weight: 700;">Ready</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="color: #203528 !important; font-weight: 600;"><i class="fa-solid fa-bolt" style="color: #d9910d; margin-right: 6px;"></i> Early Sale Access</span>
+                                        <span style="color: #10b981 !important; font-weight: 700;">Enabled</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 10px; margin-top: 4px;">
+                                    <button class="btn-primary-action" style="flex: 1; font-size: 0.85rem; padding: 10px; justify-content: center; text-align: center; background: #f5b742; color: #203528 !important; font-weight: 700;" onclick="window.location.href='404.html';">Redeem Points</button>
+                                    <button class="btn-card-action" style="background: #203528 !important; color: #ffffff !important; border: none !important; font-size: 0.8rem; padding: 10px 18px; border-radius: 50px; font-weight: 600;" onclick="window.location.href='404.html';">History</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Personal Style Profile & Annual Styling Budget Widget -->
+                    <section class="charts-grid-equal">
+                        <!-- Style Profile -->
+                        <div class="table-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-palette"></i> Style Profile & Color Preferences</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.85rem;">
+                                        <span>Modern Scandinavian Minimalist</span><span>85% Match</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%;"><div class="progress-bar-fill" style="width: 85%; background: #203528;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.85rem;">
+                                        <span>Earthy Warm Tones & Organic Ceramics</span><span>72% Match</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%;"><div class="progress-bar-fill" style="width: 72%; background: #f5b742;"></div></div>
+                                </div>
+                                <div>
+                                    <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.85rem;">
+                                        <span>Emerald Velvet & Brushed Brass</span><span>90% Match</span>
+                                    </div>
+                                    <div class="progress-bar-container"  style="width: 100%;"><div class="progress-bar-fill" style="width: 90%; background: #10b981;"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Budget Meter -->
+                        <div class="table-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-piggy-bank"></i> Annual Home Styling Budget</h3>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px; margin: auto 0;">
+                                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; color: #203528;">
+                                    <span>Spent: $2,630.00</span>
+                                    <span style="color: #6b7280; font-size: 0.9rem;">Budget: $3,000.00</span>
+                                </div>
+                                <div class="progress-bar-container"  style="width: 100%; height: 10px;">
+                                    <div class="progress-bar-fill" style="width: 87.6%; background: #203528;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #6b7280;">
+                                    <span>Remaining: <strong>$370.00</strong></span>
+                                    <span>87.6% Budget Utilized</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- ============================================================
+                     TAB 5: PROFILE SETTINGS
+                     ============================================================ -->
+                <div class="dashboard-tab-content" id="tab-user-profile">
+                    <div class="dashboard-header-banner">
+                        <div class="banner-text">
+                            <h1>Account Security & Profile Settings</h1>
+                            <p>Manage your contact details, security ratings, and saved shipping addresses.</p>
+                        </div>
+                    </div>
+
+                    <!-- Security Rating Bar Chart -->
+                    <section class="chart-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-shield-halved"></i> Account Security & Completion Score (Bar Chart)</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="userSecurityScoreChart"></canvas>
+                        </div>
+                    </section>
+
+                    <!-- User Profile Header Card -->
+                    <section class="profile-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/image_096.webp" alt="Sophia Reynolds" class="profile-avatar-large">
+                        <div class="profile-details" style="flex: 1;">
+                            <h2>Sophia Reynolds</h2>
+                            <p><i class="fa-solid fa-crown" style="color: #f5b742;"></i> Stackly Gold VIP Member &bull; Member since 2024</p>
+                            <div class="profile-meta-list">
+                                <div class="profile-meta-item"><i class="fa-regular fa-envelope"></i><span>sophia.reynolds@example.com</span></div>
+                                <div class="profile-meta-item"><i class="fa-solid fa-phone"></i><span>+1 (555) 382-9104</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Single Card Container: Personal Information -->
+                    <section class="single-card-section" style="max-width: 680px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 0 16px;">
+                        <!-- Personal Info Edit Form -->
+                        <div class="table-card" style="padding: 36px 40px; box-sizing: border-box; width: 100%; border-radius: var(--border-radius-lg);" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card-header" style="margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border-color);">
+                                <h3 style="font-size: 1.2rem; color: var(--primary-green); font-weight: 700; display: flex; align-items: center; gap: 10px; margin: 0;">
+                                    <i class="fa-solid fa-user-pen" style="color: var(--accent-yellow);"></i> Personal Information
+                                </h3>
+                            </div>
+                            <form class="auth-form" style="display: flex; flex-direction: column; gap: 20px; width: 100%; box-sizing: border-box;">
+                                <div class="form-group" style="width: 100%; box-sizing: border-box;">
+                                    <label style="font-weight: 600; font-size: 0.9rem; color: var(--primary-green); margin-bottom: 8px; display: block;">Full Name</label>
+                                    <input type="text" id="profileFullName" class="form-control" value="" placeholder="Enter your full name" style="padding: 13px 18px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; font-size: 0.95rem;" required>
+                                </div>
+                                <div class="form-group" style="width: 100%; box-sizing: border-box;">
+                                    <label style="font-weight: 600; font-size: 0.9rem; color: var(--primary-green); margin-bottom: 8px; display: block;">Email Address</label>
+                                    <input type="email" id="profileEmail" class="form-control" value="" placeholder="Enter your email address" style="padding: 13px 18px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; font-size: 0.95rem;" required>
+                                </div>
+                                <div class="form-group" style="width: 100%; box-sizing: border-box;">
+                                    <label style="font-weight: 600; font-size: 0.9rem; color: var(--primary-green); margin-bottom: 8px; display: block;">Phone Number</label>
+                                    <input type="tel" id="profilePhone" class="form-control" value="" placeholder="Enter your phone number" style="padding: 13px 18px; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); width: 100%; box-sizing: border-box; font-size: 0.95rem;" required>
+                                </div>
+                                <button type="submit" class="btn-primary-action" style="align-self: flex-start; margin-top: 10px; padding: 13px 32px; font-size: 0.92rem; border-radius: 50px; justify-content: center; text-align: center;">Save Changes</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- Animation & Core Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="auth-dashboard.js"></script>
+</body>
+</html>

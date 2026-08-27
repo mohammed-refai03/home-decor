@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Home Decor Store</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Animated Luxury Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-ring">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Loading" class="preloader-logo-img" data-aos="zoom-in">
+                <div class="preloader-spinner"></div>
+            </div>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 1. Header / Navbar -->
+    <header class="header">
+        <div class="container header-container"  data-aos="fade-up">
+            <a href="404.html" class="logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+            <nav class="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline"><i class="fa-regular fa-user"></i> Login</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section (Auto & Manual Multi-Content Slider) -->
+    <section class="hero hero-slider-section" id="homeHeroSection" data-aos="fade-up">
+        
+        <!-- Hero Slides Wrapper -->
+        <div class="hero-slides-wrapper">
+            
+            <!-- Slide 1 -->
+            <div class="hero-slide-item active" data-index="0">
+                <div class="hero-bg">
+                    <img src="assets/images/image_013.webp" alt="Living Room Luxury" data-aos="zoom-in">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container hero-content"  data-aos="fade-up">
+                    <span class="subtitle"><i class="fa-solid fa-sparkles"></i> TRANSFORM YOUR SPACE</span>
+                    <h1>Beautiful Home <br>Starts <span class="highlight">Here</span></h1>
+                    <p>Explore elegant decor, modern furniture, and handpicked pieces to create a home you'll love.</p>
+                    <div class="hero-buttons">
+                        <a href="404.html" class="btn btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="btn btn-transparent">Explore Collections <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide-item" data-index="1">
+                <div class="hero-bg">
+                    <img src="assets/images/image_049.webp" alt="Bespoke Dining & Living" data-aos="zoom-in">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container hero-content"  data-aos="fade-up">
+                    <span class="subtitle"><i class="fa-solid fa-gem"></i> CURATED CRAFTSMANSHIP</span>
+                    <h1>Bespoke Decor for <br>Modern <span class="highlight">Living</span></h1>
+                    <p>Handcrafted from FSC certified teak, organic Belgian linen, and brushed brass details.</p>
+                    <div class="hero-buttons">
+                        <a href="404.html" class="btn btn-primary">Shop New Arrivals <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="btn btn-transparent">View Lookbooks <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide-item" data-index="2">
+                <div class="hero-bg">
+                    <img src="assets/images/image_001.webp" alt="Sustainable Aesthetic Sanctuary" data-aos="zoom-in">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container hero-content"  data-aos="fade-up">
+                    <span class="subtitle"><i class="fa-solid fa-leaf"></i> SUSTAINABLE LUXURY</span>
+                    <h1>Timeless Pieces <br>Built to <span class="highlight">Last</span></h1>
+                    <p>Elevate your sanctuary with eco-friendly furniture designed with uncompromising quality.</p>
+                    <div class="hero-buttons">
+                        <a href="404.html" class="btn btn-primary">Discover Sustainable Line <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="btn btn-transparent">Book 3D Staging <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Floating Side Arrows (Prev / Next) -->
+        <button class="hero-arrow-btn prev" id="heroPrevBtn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="hero-arrow-btn next" id="heroNextBtn" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <!-- Bottom Dot Indicators -->
+        <div class="hero-dots-container"  data-aos="fade-up">
+            <span class="hero-dot active" data-index="0"></span>
+            <span class="hero-dot" data-index="1"></span>
+            <span class="hero-dot" data-index="2"></span>
+        </div>
+
+    </section>
+
+
+    <!-- 4. Shop by Categories -->
+    <section class="categories section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Shop by <span class="highlight-line">Categories</span></h2>
+            </div>
+            <div class="categories-grid">
+                <a href="404.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-img-wrap">
+                        <img src="assets/images/image_050.webp" alt="Furniture" data-aos="zoom-in">
+                        <span class="category-count-badge"><i class="fa-solid fa-layer-group"></i> 120+ Items</span>
+                        <div class="category-img-overlay"></div>
+                    </div>
+                    <div class="category-card-body">
+                        <div class="category-info">
+                            <h3>Furniture</h3>
+                            <span class="category-sub">Explore Collection</span>
+                        </div>
+                        <div class="category-arrow-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="404.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-img-wrap">
+                        <img src="assets/images/image_051.webp" alt="Lighting" data-aos="zoom-in">
+                        <span class="category-count-badge"><i class="fa-solid fa-layer-group"></i> 80+ Items</span>
+                        <div class="category-img-overlay"></div>
+                    </div>
+                    <div class="category-card-body">
+                        <div class="category-info">
+                            <h3>Lighting</h3>
+                            <span class="category-sub">Explore Collection</span>
+                        </div>
+                        <div class="category-arrow-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="404.html" class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-img-wrap">
+                        <img src="assets/images/image_052.webp" alt="Wall Decor" data-aos="zoom-in">
+                        <span class="category-count-badge"><i class="fa-solid fa-layer-group"></i> 150+ Items</span>
+                        <div class="category-img-overlay"></div>
+                    </div>
+                    <div class="category-card-body">
+                        <div class="category-info">
+                            <h3>Wall Decor</h3>
+                            <span class="category-sub">Explore Collection</span>
+                        </div>
+                        <div class="category-arrow-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="404.html" class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-img-wrap">
+                        <img src="assets/images/image_053.webp" alt="Rugs & Carpets" data-aos="zoom-in">
+                        <span class="category-count-badge"><i class="fa-solid fa-layer-group"></i> 60+ Items</span>
+                        <div class="category-img-overlay"></div>
+                    </div>
+                    <div class="category-card-body">
+                        <div class="category-info">
+                            <h3>Rugs & Carpets</h3>
+                            <span class="category-sub">Explore Collection</span>
+                        </div>
+                        <div class="category-arrow-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="404.html" class="category-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="category-img-wrap">
+                        <img src="assets/images/image_054.webp" alt="Home Accents" data-aos="zoom-in">
+                        <span class="category-count-badge"><i class="fa-solid fa-layer-group"></i> 200+ Items</span>
+                        <div class="category-img-overlay"></div>
+                    </div>
+                    <div class="category-card-body">
+                        <div class="category-info">
+                            <h3>Home Accents</h3>
+                            <span class="category-sub">Explore Collection</span>
+                        </div>
+                        <div class="category-arrow-btn">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Featured Products -->
+    <section class="featured-products section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header flex-between" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Featured Products</h2>
+           </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="product-img">
+                        <span class="badge">New</span>
+                        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        <img src="assets/images/image_055.webp" alt="Modern Pendant Light" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <h3  data-aos="fade-up">Modern Pendant Light</h3>
+                        <div class="price">$79.99</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(24)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="product-img">
+                        <span class="badge">New</span>
+                        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        <img src="assets/images/image_056.webp" alt="Decorative Ceramic Vase" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <h3  data-aos="fade-up">Decorative Ceramic Vase</h3>
+                        <div class="price">$39.99</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="product-img">
+                        <span class="badge">New</span>
+                        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        <img src="assets/images/image_057.webp" alt="Luxury Throw Pillow" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <h3  data-aos="fade-up">Luxury Throw Pillow</h3>
+                        <div class="price">$24.99</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            <span>(32)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="product-img">
+                        <span class="badge">New</span>
+                        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        <img src="assets/images/image_058.webp" alt="Wooden Wall Shelf" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <h3  data-aos="fade-up">Wooden Wall Shelf</h3>
+                        <div class="price">$69.99</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(16)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="product-img">
+                        <span class="badge">New</span>
+                        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+                        <img src="assets/images/image_059.webp" alt="Indoor Green Plant" data-aos="zoom-in">
+                    </div>
+                    <div class="product-info">
+                        <h3  data-aos="fade-up">Indoor Green Plant</h3>
+                        <div class="price">$34.99</div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span>(27)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </section>
+
+    <!-- NEW SECTION 1: Interactive Home Style Finder Quiz -->
+    <section class="home-quiz-spotlight section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="quiz-split-wrapper">
+                <div class="quiz-content-box">
+                    <span class="subtitle"><i class="fa-solid fa-wand-magic-sparkles"></i> INTERACTIVE STYLE FINDER</span>
+                    <h2  data-aos="fade-up">Match Your Home's Aesthetic</h2>
+                    <p class="quiz-desc">Not sure which decor theme fits your room? Select your preferred vibe below to discover curated furniture palettes and styling recommendations tailored for your home.</p>
+
+                    <div class="quiz-selector-pills">
+                        <button class="quiz-pill active" data-style="japandi"><i class="fa-solid fa-tree"></i> Japandi Minimalist</button>
+                        <button class="quiz-pill" data-style="botanical"><i class="fa-solid fa-sun"></i> Warm Botanical</button>
+                        <button class="quiz-pill" data-style="scandinavian"><i class="fa-solid fa-cube"></i> Modern Scandinavian</button>
+                    </div>
+
+                    <a href="404.html" class="btn btn-primary">Take Full 60-Sec Style Quiz <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="quiz-preview-card">
+                    <div class="quiz-img-holder">
+                        <span class="quiz-style-badge">Featured Match</span>
+                        <img src="assets/images/image_060.webp" alt="Japandi Aesthetic" data-aos="zoom-in">
+                    </div>
+                    <div class="quiz-meta-row">
+                        <h3  data-aos="fade-up">Japandi Minimalist Sanctuary</h3>
+                        <span class="quiz-match-score">98% Style Match</span>
+                    </div>
+                    <p class="quiz-preview-desc">Blends Japanese wabi-sabi principles with warm Scandinavian warmth. Features natural oak, low-profile sofas, and muted ceramic textures.</p>
+                    <div class="quiz-swatch-row">
+                        <span class="quiz-swatch-title">Palette:</span>
+                        <span class="quiz-dot" style="background: #203528;" title="Forest Green"></span>
+                        <span class="quiz-dot" style="background: #e8ded1;" title="Soft Linen"></span>
+                        <span class="quiz-dot" style="background: #f5b742;" title="Golden Brass"></span>
+                        <span class="quiz-dot" style="background: #8b5a2b;" title="Warm Teak"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Trending Styles (Bento Grid Layout) -->
+    <section class="trending-styles section-padding" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2 data-aos="fade-up">Trending <span class="highlight-line">Styles</span></h2>
+                <p>Discover the most popular looks for this season</p>
+            </div>
+            <div class="bento-styles-grid" data-aos="fade-up">
+                <div class="bento-card bento-hero" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/image_060.webp" alt="Modern Minimalist" data-aos="zoom-in">
+                    <div class="bento-overlay">
+                        <span class="bento-tag">Featured Look</span>
+                        <h3>Modern Minimalist</h3>
+                        <a href="404.html" class="bento-link">Explore Style <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="bento-card bento-tall" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/image_061.webp" alt="Scandinavian" data-aos="zoom-in">
+                    <div class="bento-overlay">
+                        <span class="bento-tag">Trending</span>
+                        <h3>Scandinavian</h3>
+                        <a href="404.html" class="bento-link">Explore Style <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="bento-card bento-compact" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/images/image_023.webp" alt="Boho Chic" data-aos="zoom-in">
+                    <div class="bento-overlay">
+                        <span class="bento-tag">Popular</span>
+                        <h3>Boho Chic</h3>
+                        <a href="404.html" class="bento-link">Explore Style <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="bento-card bento-compact" data-aos="fade-up" data-aos-delay="400">
+                    <img src="assets/images/image_062.webp" alt="Industrial" data-aos="zoom-in">
+                    <div class="bento-overlay">
+                        <span class="bento-tag">Urban</span>
+                        <h3>Industrial</h3>
+                        <a href="404.html" class="bento-link">Explore Style <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="bento-card bento-compact" data-aos="fade-up" data-aos-delay="500">
+                    <img src="assets/images/image_031.webp" alt="Vintage" data-aos="zoom-in">
+                    <div class="bento-overlay">
+                        <span class="bento-tag">Classic</span>
+                        <h3>Vintage</h3>
+                        <a href="404.html" class="bento-link">Explore Style <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 10. Why Choose Us -->
+    <section class="why-choose-us section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="why-choose-wrapper">
+                <div class="why-choose-content">
+                    <span class="subtitle">WHY CHOOSE US</span>
+                    <h2  data-aos="fade-up">We Make Your Home <span class="highlight-line">Beautiful</span></h2>
+                    <p>With years of experience in interior design and furniture curation, we provide the best quality products to make your dream home a reality.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>
+                            <div class="benefit-icon"><i class="fa-solid fa-medal"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Premium Materials</h4>
+                                <p>We source only the finest sustainable materials.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Unique Designs</h4>
+                                <p>Exclusive pieces you won't find anywhere else.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benefit-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <div>
+                                <h4  data-aos="fade-up">Eco-Friendly</h4>
+                                <p>Committed to sustainable and ethical production.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-choose-image">
+                    <img src="assets/images/image_002.webp" alt="Beautiful Interior" data-aos="zoom-in">
+                    <div class="experience-badge">
+                        <h3  data-aos="fade-up">15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Sustainable Craftsmanship & Material Lab -->
+    <section class="home-material-lab section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <span class="subtitle"><i class="fa-solid fa-leaf"></i> MATERIAL LAB</span>
+                <h2  data-aos="fade-up">Responsibly Sourced <span class="highlight-line">Craftsmanship</span></h2>
+                <p style="max-width: 540px; margin: 8px auto 0 auto; color: var(--text-light);">We partner with ethical mills and certified forests to bring luxury decor built for generations.</p>
+            </div>
+
+            <div class="material-bento-grid">
+                <!-- Material Card 1: FSC Certified Teak -->
+                <div class="mat-card mat-card-large">
+                    <div class="mat-card-header">
+                        <div class="mat-icon-badge"><i class="fa-solid fa-tree"></i></div>
+                        <span class="mat-origin-tag"><i class="fa-solid fa-globe"></i> Ethical Java Plantation</span>
+                    </div>
+                    <div>
+                        <h3  data-aos="fade-up">FSC&reg; Certified Solid Teak Wood</h3>
+                        <p>Harvested exclusively from sustainably managed plantation forests. Kiln-dried to resist warping, each piece retains natural organic grain patterns with hand-rubbed wax finish.</p>
+                    </div>
+                    <div class="mat-footer-pills">
+                        <span class="mat-pill">100% Recyclable</span>
+                        <span class="mat-pill">Zero Deforestation</span>
+                        <span class="mat-pill">20-Year Guarantee</span>
+                    </div>
+                </div>
+
+                <!-- Material Card 2: Organic Belgian Linen -->
+                <div class="mat-card mat-card-small">
+                    <div class="mat-card-header">
+                        <div class="mat-icon-badge"><i class="fa-solid fa-shirt"></i></div>
+                        <span class="mat-origin-tag"><i class="fa-solid fa-shield-halved"></i> OEKO-TEX Standard</span>
+                    </div>
+                    <div>
+                        <h3  data-aos="fade-up">Organic Belgian Linen</h3>
+                        <p>Woven from non-GMO flax fibers without synthetic pesticides. Hypoallergenic and naturally breathable with superior durability.</p>
+                    </div>
+                    <div class="mat-footer-pills">
+                        <span class="mat-pill">Chemical-Free</span>
+                        <span class="mat-pill">Bio-Washed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Special Offer Banner -->
+    <section class="special-offer" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="offer-banner">
+                <div class="offer-img">
+                    <img src="assets/images/image_032.webp" alt="Armchair" data-aos="zoom-in">
+                </div>
+                <div class="offer-content">
+                    <span class="subtitle">SPECIAL OFFER</span>
+                    <h2  data-aos="fade-up">Spring Sale Up to <span class="highlight">30%</span> Off</h2>
+                    <p>Refresh your home with our exclusive collection.</p>
+                    <a href="404.html" class="btn btn-primary">Shop the Sale <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="offer-features">
+                    <div class="offer-feature">
+                        <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+                        <span>Premium<br>Quality</span>
+                    </div>
+                    <div class="offer-feature">
+                        <div class="icon"><i class="fa-solid fa-certificate"></i></div>
+                        <span>Best Prices<br>Guaranteed</span>
+                    </div>
+                    <div class="offer-feature">
+                        <div class="icon"><i class="fa-solid fa-gem"></i></div>
+                        <span>Stylish<br>Designs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ADDED 6 MORE RELATED SECTIONS WITH DIFFERENT LAYOUTS
+         ========================================== -->
+
+    
+
+    
+
+    <!-- 9. Design Inspiration (Magazine Blog Layout) -->
+    <section class="blog-inspiration section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header flex-between" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Design <span class="highlight-line">Inspiration</span></h2>
+            </div>
+            <div class="blog-grid" data-aos="fade-up">
+                <!-- Large Featured Article -->
+                <article class="blog-card featured-article" data-aos="flip-left" data-aos-delay="100">
+                    <div class="blog-img">
+                        <img src="assets/images/image_063.webp" alt="Living Room Tips" data-aos="zoom-in">
+                        <span class="category-badge">Interior Design</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar"></i> Oct 15, 2023</span>
+                            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3  data-aos="fade-up"><a href="404.html">7 Secrets to Styling a Cozy and Minimalist Living Room</a></h3>
+                        <p>Discover how to balance warmth and simplicity in your living space with our expert guide to minimalist decor that doesn't feel cold.</p>
+                        <a href="404.html" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Smaller Articles List -->
+                <div class="side-articles" data-aos="fade-up">
+                    <article class="blog-card small-article" data-aos="flip-left" data-aos-delay="200">
+                        <div class="blog-img">
+                            <img src="assets/images/image_064.webp" alt="Bedroom Ideas" data-aos="zoom-in">
+                        </div>
+                        <div class="blog-content">
+                            <span class="category-badge">Bedroom</span>
+                            <h3  data-aos="fade-up"><a href="404.html">How to Choose the Perfect Mattress & Bed Frame</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 10, 2023</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card small-article" data-aos="flip-left" data-aos-delay="300">
+                        <div class="blog-img">
+                            <img src="assets/images/image_065.webp" alt="Kitchen Decor" data-aos="zoom-in">
+                        </div>
+                        <div class="blog-content">
+                            <span class="category-badge">Kitchen</span>
+                            <h3  data-aos="fade-up"><a href="404.html">Top 5 Color Palettes for Modern Kitchens in 2024</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Oct 05, 2023</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-card small-article" data-aos="flip-left" data-aos-delay="100">
+                        <div class="blog-img">
+                            <img src="assets/images/image_066.webp" alt="Lighting Guide" data-aos="zoom-in">
+                        </div>
+                        <div class="blog-content">
+                            <span class="category-badge">Guides</span>
+                            <h3  data-aos="fade-up"><a href="404.html">The Ultimate Guide to Layering Light in Any Room</a></h3>
+                            <div class="blog-meta">
+                                <span><i class="fa-regular fa-calendar"></i> Sep 28, 2023</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Customer Testimonials (Carousel Layout) -->
+    <section class="testimonials section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">What Our Customers <span class="highlight-line">Say</span></h2>
+            </div>
+            
+            <div class="testimonial-slider-wrapper">
+                <!-- Swiper -->
+                <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"The quality of the furniture is outstanding. It completely transformed my living room. Highly recommend Stackly to anyone looking for premium decor!"</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_006.webp" alt="Sarah J." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">Sarah Jenkins</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"Fast shipping and excellent customer service. The pendant lights I ordered look even better in person than they did on the website."</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_007.webp" alt="Mark T." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">Mark Thompson</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"I love the curated collections. It makes finding matching pieces so incredibly easy. My home looks like it was styled by a professional."</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_008.webp" alt="Emily R." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">Emily Rodriguez</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"I ordered a custom upholstered sofa. The White-Glove delivery team was incredibly professional. They set it up in my living room and took all the packaging with them!"</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_009.webp" alt="James L." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">James Lawson</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"As an interior designer, joining the Trade Partner program was a no-brainer. The dedicated account manager makes sourcing items for my clients so easy."</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_011.webp" alt="Anna K." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">Anna Kowalski</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <p class="review-text">"I couldn't be happier with the lighting fixtures. They were incredibly easy to install and they instantly elevated the mood in our dining room."</p>
+                                <div class="customer-info">
+                                    <img src="assets/images/image_012.webp" alt="David M." data-aos="zoom-in">
+                                    <div>
+                                        <h4  data-aos="fade-up">David Martinez</h4>
+                                        <div class="rating">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-next" style="color: var(--primary-green);"></div>
+                <div class="swiper-button-prev" style="color: var(--primary-green);"></div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- 11. FAQ (Accordion) -->
+    <section class="faq-section section-padding" data-aos="fade-up">
+        <div class="container"  data-aos="fade-up">
+            <div class="section-header center" data-aos="zoom-in-up">
+                <h2  data-aos="fade-up">Frequently Asked <span class="highlight-line">Questions</span></h2>
+                <p>Everything you need to know about our products and services.</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Do you offer international shipping?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we ship worldwide! Shipping costs and delivery times vary depending on the destination. You can calculate shipping costs at checkout before completing your purchase.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>What is your return policy?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We offer a 30-day hassle-free return policy. If you're not completely satisfied with your purchase, you can return it in its original condition for a full refund or store credit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Do you provide interior design consulting?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely! Our team of expert interior designers is available for virtual or in-home consultations to help you style your space perfectly. Contact us to book an appointment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>How can I track my order?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Once your order ships, you will receive a confirmation email with a tracking number. You can use this number on our tracking page to see the real-time status of your delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+  
+
+    <!-- 12. Footer (Multi-column Layout) -->
+    <footer class="footer">
+        <div class="container"  data-aos="fade-up">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="404.html" class="logo footer-logo">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor" class="site-logo-img" data-aos="zoom-in">
+            </a>
+                    <p class="footer-desc">Curating beautiful spaces with premium quality furniture and decor for the modern home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3  data-aos="fade-up">Categories</h3>
+                    <ul>
+                        <li><a href="404.html">Furniture</a></li>
+                        <li><a href="404.html">Lighting</a></li>
+                        <li><a href="404.html">Wall Decor</a></li>
+                        <li><a href="404.html">Rugs & Carpets</a></li>
+                        <li><a href="404.html">Home Accents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3  data-aos="fade-up">Contact Info</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@stackly.com</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Stackly Home Decor Store. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

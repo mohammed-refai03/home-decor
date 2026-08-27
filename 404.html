@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Stackly Home Decor Store</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP Animation CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --primary-green: #203528;
+            --accent-yellow: #f5b742;
+            --accent-yellow-hover: #e3a532;
+            --bg-dark: #0f1c14;
+            --white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.75);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden !important;
+            font-family: var(--font-main);
+            background: radial-gradient(circle at center, #1b2e22 0%, var(--bg-dark) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            inset: 0;
+        }
+
+        /* Floating Background Graphic Elements */
+        .decor-bg-elements {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: rgba(245, 183, 66, 0.12);
+            font-size: 3.2rem;
+        }
+
+        .icon-1 { top: 10%; left: 8%; }
+        .icon-2 { top: 15%; right: 10%; font-size: 4rem; }
+        .icon-3 { bottom: 14%; left: 10%; font-size: 3.5rem; }
+        .icon-4 { bottom: 12%; right: 8%; }
+        .icon-5 { top: 48%; left: 4%; font-size: 2.5rem; }
+        .icon-6 { top: 46%; right: 5%; font-size: 2.6rem; }
+
+        /* Glowing Radial Background Orb */
+        .glowing-orb {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245, 183, 66, 0.18) 0%, rgba(32, 53, 40, 0) 70%);
+            z-index: 1;
+        }
+
+        /* Main 404 Content Card */
+        .error-card {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 520px;
+            width: 90%;
+            max-height: 96vh;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+            margin-bottom: 12px;
+            transition: transform 0.25s ease;
+            text-decoration: none !important;
+        }
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        .logo-link img {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .error-code {
+            font-size: clamp(4.5rem, 12vw, 7.5rem);
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--white) 30%, var(--accent-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -3px;
+            margin-bottom: 6px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .error-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 183, 66, 0.15);
+            border: 1px solid rgba(245, 183, 66, 0.3);
+            color: var(--accent-yellow);
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .error-title {
+            font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .error-subtitle {
+            font-size: clamp(0.85rem, 1.8vw, 0.98rem);
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            max-width: 440px;
+        }
+
+        /* Action Buttons Grid */
+        .error-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .btn-action-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--accent-yellow);
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 11px 24px;
+            border-radius: 50px;
+            text-decoration: none !important;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(245, 183, 66, 0.25);
+        }
+        .btn-action-primary:hover {
+            background-color: var(--accent-yellow-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 183, 66, 0.35);
+        }
+
+        .btn-action-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 11px 24px;
+            border-radius: 50px;
+            text-decoration: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .btn-action-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--accent-yellow);
+            border-color: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 640px) {
+            .error-card {
+                padding: 16px 12px;
+            }
+            .error-subtitle {
+                margin-bottom: 18px;
+                font-size: 0.88rem;
+            }
+            .error-actions {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+            .btn-action-primary, .btn-action-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 18px;
+            }
+            .floating-icon {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Animated Luxury Page Preloader -->
+    <div id="pagePreloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-ring">
+                <img src="assets/images/logo_0318.webp" alt="Stackly Loading" class="preloader-logo-img" data-aos="zoom-in">
+                <div class="preloader-spinner"></div>
+            </div>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Floating Decor Elements Background -->
+    <div class="decor-bg-elements">
+        <div class="glowing-orb" id="orb"></div>
+        <i class="fa-solid fa-couch floating-icon icon-1"></i>
+        <i class="fa-solid fa-lightbulb floating-icon icon-2"></i>
+        <i class="fa-solid fa-house-chimney-window floating-icon icon-3"></i>
+        <i class="fa-solid fa-chair floating-icon icon-4"></i>
+        <i class="fa-solid fa-paint-roller floating-icon icon-5"></i>
+        <i class="fa-solid fa-rug floating-icon icon-6"></i>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="error-card">
+        <!-- Stackly Logo (Clickable -> index.html) -->
+        <a href="index.html" class="logo-link" title="Return to Home">
+            <img src="assets/images/logo_0318.webp" alt="Stackly Home Decor">
+        </a>
+
+        <div class="error-badge" id="badge">
+            <i class="fa-solid fa-compass"></i> Page Not Found
+        </div>
+
+        <h1 class="error-code" id="errorCode">404</h1>
+
+        <h2 class="error-title" id="errorTitle" data-aos="fade-up">Page Lost in Decor Haven</h2>
+        <p class="error-subtitle" id="errorSubtitle">
+            The page or room section you are trying to reach has been relocated, renamed, or doesn't exist.
+        </p>
+
+        <!-- 2 Required Navigation Buttons -->
+        <div class="error-actions" id="errorActions">
+            <!-- Button 1: Return to Home -->
+            <a href="index.html" class="btn-action-primary">
+                <i class="fa-solid fa-house"></i> Return to Home
+            </a>
+
+            <!-- Button 2: Go Back -->
+            <button onclick="window.history.back();" class="btn-action-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Go Back
+            </button>
+        </div>
+    </div>
+
+    <!-- GSAP Continuous Animations Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Entrance Fade & Scale In Timeline
+            if (typeof gsap !== 'undefined') {
+                const tl = gsap.timeline();
+                tl.from("#badge", { opacity: 0, y: -20, duration: 0.6, ease: "back.out(1.7)" })
+                  .from("#errorCode", { opacity: 0, scale: 0.8, duration: 0.8, ease: "elastic.out(1, 0.5)" }, "-=0.3")
+                  .from("#errorTitle", { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" }, "-=0.4")
+                  .from("#errorSubtitle", { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" }, "-=0.3")
+                  .from("#errorActions", { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" }, "-=0.2");
+
+                // 2. Continuous Animation - Glowing Orb Pulse
+                gsap.to("#orb", {
+                    scale: 1.35,
+                    opacity: 0.7,
+                    duration: 3,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                // 3. Continuous Animation - 404 Floating Pulse
+                gsap.to("#errorCode", {
+                    y: -12,
+                    duration: 2.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                // 4. Continuous Animation - Floating Decor Icons Drifting
+                const icons = document.querySelectorAll(".floating-icon");
+                icons.forEach((icon, index) => {
+                    const speed = 2 + (index % 3) * 0.8;
+                    const floatDist = 15 + (index % 4) * 8;
+                    const rotationDist = (index % 2 === 0 ? 1 : -1) * (10 + index * 5);
+
+                    gsap.to(icon, {
+                        y: -floatDist,
+                        rotation: rotationDist,
+                        duration: speed,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "sine.inOut",
+                        delay: index * 0.3
+                    });
+                });
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
