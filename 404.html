@@ -108,15 +108,26 @@
         }
 
         .error-code {
-            font-size: clamp(4.5rem, 12vw, 7.5rem);
+            display: inline-block;
+            font-size: clamp(6.5rem, 15vw, 10.5rem);
             font-weight: 800;
-            line-height: 1;
+            line-height: 1.05;
             background: linear-gradient(135deg, var(--white) 30%, var(--accent-yellow) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -3px;
-            margin-bottom: 6px;
+            margin: 0 0 6px 0;
+            padding-bottom: 4px;
             text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 992px) {
+            .error-code {
+                font-size: 10.5rem;
+                line-height: 1.0;
+                margin: 0 0 8px 0;
+                padding-bottom: 4px;
+            }
         }
 
         .error-badge {
@@ -136,18 +147,20 @@
         }
 
         .error-title {
-            font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 8px;
             color: var(--white);
         }
 
         .error-subtitle {
             font-size: clamp(0.85rem, 1.8vw, 0.98rem);
             color: var(--text-muted);
+            margin-top: 0;
             margin-bottom: 24px;
-            line-height: 1.5;
-            max-width: 440px;
+            line-height: 1.55;
+            max-width: 460px;
         }
 
         /* Action Buttons Grid */
@@ -271,8 +284,7 @@
 
         <h1 class="error-code" id="errorCode">404</h1>
 
-        <h2 class="error-title" id="errorTitle" data-aos="fade-up">Page Lost in Decor Haven</h2>
-        <p class="error-subtitle" id="errorSubtitle">
+       <p class="error-subtitle" id="errorSubtitle">
             The page or room section you are trying to reach has been relocated, renamed, or doesn't exist.
         </p>
 

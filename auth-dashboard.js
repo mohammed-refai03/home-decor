@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+
+    window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+    });
     
     // Initialize AOS (Animate On Scroll) for Auth & Dashboards
     const initAOS = () => {
@@ -769,142 +773,191 @@ if (typeof initProjectFormValidations === 'undefined') {
     function initProjectFormValidations() {
         const isNameInput = (input) => {
             if (!input) return false;
-            const type = (input.type || '').toLowerCase();
-            if (type !== 'text' && type !== 'search' && type !== '') return false;
-            const attrStr = `${input.id} ${input.name} ${input.placeholder} ${input.className}`.toLowerCase();
-            const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
-            const parentText = input.parentElement ? input.parentElement.textContent.toLowerCase() : '';
+            const type = (input.type || 'text').toLowerCase();
+            if (type !== 'text' && type !== 'search') return false;
 
-            return attrStr.includes('fullname') || attrStr.includes('firstname') || attrStr.includes('lastname') ||
-                   attrStr.includes('name') || labelText.includes('name') || parentText.includes('name');
+            const idStr = (input.id || '').toLowerCase();
+            const nameStr = (input.name || '').toLowerCase();
+            const placeholderStr = (input.placeholder || '').toLowerCase();
+            const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
+
+            if (idStr.includes('email') || nameStr.includes('email') || placeholderStr.includes('email') || labelText.includes('email')) return false;
+            if (idStr.includes('pass') || nameStr.includes('pass') || placeholderStr.includes('pass') || labelText.includes('password')) return false;
+            if (idStr.includes('phone') || nameStr.includes('phone') || placeholderStr.includes('phone') || labelText.includes('phone')) return false;
+
+            return idStr.includes('name') || nameStr.includes('fullname') || nameStr.includes('firstname') || nameStr.includes('lastname') || labelText.includes('name');
         };
 
         const isPhoneInput = (input) => {
             if (!input) return false;
             const type = (input.type || '').toLowerCase();
             if (type === 'tel') return true;
-            const attrStr = `${input.id} ${input.name} ${input.placeholder} ${input.className}`.toLowerCase();
-            const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
-            const parentText = input.parentElement ? input.parentElement.textContent.toLowerCase() : '';
+            if (type !== 'text' && type !== 'number' && type !== 'search') return false;
 
-            return attrStr.includes('phone') || attrStr.includes('mobile') || attrStr.includes('contact') ||
-                   labelText.includes('phone') || parentText.includes('phone');
+            const idStr = (input.id || '').toLowerCase();
+            const nameStr = (input.name || '').toLowerCase();
+            const placeholderStr = (input.placeholder || '').toLowerCase();
+            const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
+
+            return idStr.includes('phone') || idStr.includes('mobile') ||
+                   nameStr.includes('phone') || nameStr.includes('mobile') ||
+                   placeholderStr.includes('phone') || placeholderStr.includes('mobile') ||
+                   labelText.includes('phone') || labelText.includes('mobile');
         };
 
         const isEmailInput = (input) => {
             if (!input) return false;
             const type = (input.type || '').toLowerCase();
             if (type === 'email') return true;
-            const attrStr = `${input.id} ${input.name} ${input.placeholder}`.toLowerCase();
-            return attrStr.includes('email') || attrStr.includes('mail');
+
+            const idStr = (input.id || '').toLowerCase();
+            const nameStr = (input.name || '').toLowerCase();
+            const placeholderStr = (input.placeholder || '').toLowerCase();
+
+            return idStr.includes('email') || nameStr.includes('email') || placeholderStr.includes('email');
         };
 
-        // Attach real-time input enforcement and validation tooltips to all input fields
-        document.querySelectorAll('input').forEach(input => {
-            // Name field: ONLY alphabets and spaces
-            if (isNameInput(input)) {
-                const validateName = () => {
-                    const val = input.value;
-                    if (val.length > 0 && !/^[a-zA-Z\s]+$/.test(val)) {
-                        input.setCustomValidity("Please enter alphabets only.");
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                };
+        // Block native browser validation popup tooltips globally
+        document.addEventListener('invalid', (e) => {
+            e.preventDefault();
+        }, true);
 
-                input.addEventListener('input', validateName);
-                input.addEventListener('blur', validateName);
+        const clearInlineError = (input) => {
+            if (!input) return;
+            input.classList.remove('input-error', 'is-invalid');
+            const container = input.closest('.form-group') || input.closest('.input-icon-wrapper') || input.parentElement;
+            if (container) {
+                const existingError = container.querySelector('.inline-error-msg');
+                if (existingError) existingError.remove();
             }
+        };
 
-            // Phone field: ONLY numbers
-            if (isPhoneInput(input)) {
-                const validatePhone = () => {
-                    const val = input.value;
-                    if (val.length > 0 && !/^[0-9]+$/.test(val)) {
-                        input.setCustomValidity("Please enter numbers only.");
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                };
-
-                input.addEventListener('input', validatePhone);
-                input.addEventListener('blur', validatePhone);
+        const showInlineError = (input, message) => {
+            if (!input || !message) return;
+            clearInlineError(input);
+            input.classList.add('input-error', 'is-invalid');
+            
+            const errorEl = document.createElement('span');
+            errorEl.className = 'inline-error-msg';
+            errorEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
+            
+            const nForm = input.closest('.newsletter-form');
+            if (nForm) {
+                let nWrapper = input.closest('.newsletter-input-wrapper');
+                if (!nWrapper) {
+                    nWrapper = document.createElement('div');
+                    nWrapper.className = 'newsletter-input-wrapper';
+                    input.parentNode.insertBefore(nWrapper, input);
+                    nWrapper.appendChild(input);
+                }
+                nWrapper.appendChild(errorEl);
+            } else {
+                const container = input.closest('.form-group') || input.closest('.input-icon-wrapper') || input.parentElement;
+                if (container) {
+                    container.appendChild(errorEl);
+                } else {
+                    input.insertAdjacentElement('afterend', errorEl);
+                }
             }
+        };
 
-            // Email field: .com is MANDATORY to treat as valid email
-            if (isEmailInput(input)) {
-                const validateEmail = () => {
-                    const val = input.value.trim();
-                    if (val.length > 0) {
-                        const endsWithCom = val.toLowerCase().endsWith('.com');
-                        const isEmailPattern = /^[^\s@]+@[^\s@]+\.com$/i.test(val);
-
-                        if (!endsWithCom || !isEmailPattern) {
-                            input.setCustomValidity("Please enter a valid email address ending with .com");
-                        } else {
-                            input.setCustomValidity("");
-                        }
-                    } else {
-                        input.setCustomValidity("");
+        // Real-time input clearing for all form inputs
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            ['input', 'change', 'blur'].forEach(evt => {
+                input.addEventListener(evt, () => {
+                    const val = input.value ? input.value.trim() : '';
+                    if (val) {
+                        clearInlineError(input);
                     }
-                };
-
-                input.addEventListener('input', validateEmail);
-                input.addEventListener('change', validateEmail);
-                input.addEventListener('blur', validateEmail);
-            }
+                });
+            });
         });
 
         // Sync logged in email & role to profile display places
         syncUserProfileData();
 
-        // Handle Form Submissions across all forms
+        // Handle Form Submissions with Script-Based Inline Validation
         document.querySelectorAll('form').forEach(form => {
+            // Disable native browser required tooltip popups
+            form.setAttribute('novalidate', 'true');
+
             form.addEventListener('submit', (e) => {
+                let isValid = true;
                 let firstInvalidInput = null;
-                const inputs = form.querySelectorAll('input');
+
+                // Clear prior inline errors in this form
+                form.querySelectorAll('input, select, textarea').forEach(input => clearInlineError(input));
+
+                const inputs = form.querySelectorAll('input, select, textarea');
 
                 inputs.forEach(input => {
-                    const val = input.value;
-                    if (isNameInput(input)) {
-                        if (val.length > 0 && !/^[a-zA-Z\s]+$/.test(val)) {
-                            input.setCustomValidity("Please enter alphabets only.");
-                            if (!firstInvalidInput) firstInvalidInput = input;
-                        } else {
-                            input.setCustomValidity("");
-                        }
-                    } else if (isPhoneInput(input)) {
-                        if (val.length > 0 && !/^[0-9]+$/.test(val)) {
-                            input.setCustomValidity("Please enter numbers only.");
-                            if (!firstInvalidInput) firstInvalidInput = input;
-                        } else {
-                            input.setCustomValidity("");
-                        }
-                    } else if (isEmailInput(input)) {
-                        const trimmed = val.trim();
-                        const endsWithCom = trimmed.toLowerCase().endsWith('.com');
-                        const isEmailPattern = /^[^\s@]+@[^\s@]+\.com$/i.test(trimmed);
+                    let errorMsg = '';
+                    const val = input.value ? input.value.trim() : '';
+                    const isRequired = input.hasAttribute('required') || input.required;
+                    let fieldName = 'field';
+                    if (input.labels && input.labels.length > 0) {
+                        fieldName = input.labels[0].textContent.replace('*', '').trim().toLowerCase();
+                    } else if (input.placeholder) {
+                        fieldName = input.placeholder.trim().toLowerCase();
+                    } else if (input.name) {
+                        fieldName = input.name.trim().toLowerCase();
+                    } else if (input.id) {
+                        fieldName = input.id.trim().toLowerCase();
+                    }
 
-                        if (trimmed.length > 0 && (!endsWithCom || !isEmailPattern)) {
-                            input.setCustomValidity("Please enter a valid email address ending with .com");
-                            if (!firstInvalidInput) firstInvalidInput = input;
+                    fieldName = fieldName
+                        .replace(/^(enter|type|input|write|select)\s+/i, '')
+                        .replace(/^(your|a|an|the)\s+/i, '')
+                        .replace(/^(enter|type|input|write|select)\s+/i, '')
+                        .replace(/^(your|a|an|the)\s+/i, '')
+                        .trim();
+
+                    if (isRequired && !val) {
+                        if (input.type === 'checkbox') {
+                            if (!input.checked) errorMsg = 'You must accept this to proceed.';
+                        } else if (input.type === 'radio') {
+                            const checkedRadio = form.querySelector(`input[name="${input.name}"]:checked`);
+                            if (!checkedRadio) errorMsg = 'Please make a selection.';
                         } else {
-                            input.setCustomValidity("");
+                            errorMsg = `Please enter your ${fieldName || 'information'}.`;
                         }
+                    } else if (val) {
+                        if (isNameInput(input)) {
+                            if (!/^[a-zA-Z\s]+$/.test(val)) {
+                                errorMsg = 'Please enter alphabets only.';
+                            }
+                        } else if (isPhoneInput(input)) {
+                            if (!/^[0-9]+$/.test(val)) {
+                                errorMsg = 'Please enter numbers only.';
+                            }
+                        } else if (isEmailInput(input)) {
+                            const isEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(val);
+                            if (!isEmailPattern) {
+                                errorMsg = 'Please enter a valid email address.';
+                            }
+                        } else if (input.id === 'confirmPassword') {
+                            const pwdEl = document.getElementById('signupPassword') || form.querySelector('input[type="password"]');
+                            if (pwdEl && val !== pwdEl.value) {
+                                errorMsg = 'Passwords do not match.';
+                            }
+                        }
+                    }
+
+                    if (errorMsg) {
+                        isValid = false;
+                        showInlineError(input, errorMsg);
+                        if (!firstInvalidInput) firstInvalidInput = input;
                     }
                 });
 
-                if (!form.checkValidity() || firstInvalidInput) {
+                if (!isValid) {
                     e.preventDefault();
-                    if (firstInvalidInput) {
-                        firstInvalidInput.reportValidity();
-                    } else {
-                        form.reportValidity();
-                    }
+                    e.stopPropagation();
+                    if (firstInvalidInput) firstInvalidInput.focus();
                     return false;
                 }
 
-                // Redirection logic according to page & form type
+                // Follow original redirection & button navigation logic
                 const formId = form.id;
                 const pathname = window.location.pathname.toLowerCase();
                 const isLoginPage = formId === 'loginForm' || pathname.endsWith('login.html');

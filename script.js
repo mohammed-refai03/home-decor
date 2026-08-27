@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.scrollTo(0, 0);
 
+    window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+    });
+
     // Preloader Dismissal (Minimum 3 seconds)
     const preloader = document.getElementById('pagePreloader');
     if (preloader) {
@@ -419,144 +423,8 @@ function initProjectFormValidations() {
         return attrStr.includes('email') || attrStr.includes('mail');
     };
 
-    // Attach real-time input enforcement and validation tooltips to all input fields
-    document.querySelectorAll('input').forEach(input => {
-        // Name field: ONLY alphabets and spaces
-        if (isNameInput(input)) {
-            const validateName = () => {
-                const val = input.value;
-                if (val.length > 0 && !/^[a-zA-Z\s]+$/.test(val)) {
-                    input.setCustomValidity("Please enter alphabets only.");
-                } else {
-                    input.setCustomValidity("");
-                }
-            };
-
-            input.addEventListener('input', validateName);
-            input.addEventListener('blur', validateName);
-        }
-
-        // Phone field: ONLY numbers
-        if (isPhoneInput(input)) {
-            const validatePhone = () => {
-                const val = input.value;
-                if (val.length > 0 && !/^[0-9]+$/.test(val)) {
-                    input.setCustomValidity("Please enter numbers only.");
-                } else {
-                    input.setCustomValidity("");
-                }
-            };
-
-            input.addEventListener('input', validatePhone);
-            input.addEventListener('blur', validatePhone);
-        }
-
-        // Email field: .com is MANDATORY to treat as valid email
-        if (isEmailInput(input)) {
-            const validateEmail = () => {
-                const val = input.value.trim();
-                if (val.length > 0) {
-                    const endsWithCom = val.toLowerCase().endsWith('.com');
-                    const isEmailPattern = /^[^\s@]+@[^\s@]+\.com$/i.test(val);
-
-                    if (!endsWithCom || !isEmailPattern) {
-                        input.setCustomValidity("Please enter a valid email address ending with .com");
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                } else {
-                    input.setCustomValidity("");
-                }
-            };
-
-            input.addEventListener('input', validateEmail);
-            input.addEventListener('change', validateEmail);
-            input.addEventListener('blur', validateEmail);
-        }
-    });
-
     // Sync logged in email & role to profile display places
     syncUserProfileData();
-
-    // Handle Form Submissions across all forms
-    document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', (e) => {
-            let firstInvalidInput = null;
-            const inputs = form.querySelectorAll('input');
-
-            inputs.forEach(input => {
-                const val = input.value;
-                if (isNameInput(input)) {
-                    if (val.length > 0 && !/^[a-zA-Z\s]+$/.test(val)) {
-                        input.setCustomValidity("Please enter alphabets only.");
-                        if (!firstInvalidInput) firstInvalidInput = input;
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                } else if (isPhoneInput(input)) {
-                    if (val.length > 0 && !/^[0-9]+$/.test(val)) {
-                        input.setCustomValidity("Please enter numbers only.");
-                        if (!firstInvalidInput) firstInvalidInput = input;
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                } else if (isEmailInput(input)) {
-                    const trimmed = val.trim();
-                    const endsWithCom = trimmed.toLowerCase().endsWith('.com');
-                    const isEmailPattern = /^[^\s@]+@[^\s@]+\.com$/i.test(trimmed);
-
-                    if (trimmed.length > 0 && (!endsWithCom || !isEmailPattern)) {
-                        input.setCustomValidity("Please enter a valid email address ending with .com");
-                        if (!firstInvalidInput) firstInvalidInput = input;
-                    } else {
-                        input.setCustomValidity("");
-                    }
-                }
-            });
-
-            if (!form.checkValidity() || firstInvalidInput) {
-                e.preventDefault();
-                if (firstInvalidInput) {
-                    firstInvalidInput.reportValidity();
-                } else {
-                    form.reportValidity();
-                }
-                return false;
-            }
-
-            // Redirection logic according to page & form type
-            const formId = form.id;
-            const pathname = window.location.pathname.toLowerCase();
-            const isLoginPage = formId === 'loginForm' || pathname.endsWith('login.html');
-            const isSignupPage = formId === 'signupForm' || pathname.endsWith('signup.html');
-
-            if (isLoginPage) {
-                e.preventDefault();
-                const emailInput = form.querySelector('input[type="email"], #loginEmail');
-                const selectedRoleInput = form.querySelector('input[name="userRole"]:checked');
-                const userEmail = emailInput ? emailInput.value.trim() : '';
-                const selectedRole = selectedRoleInput ? selectedRoleInput.value : 'user';
-
-                if (userEmail) {
-                    localStorage.setItem('currentUserEmail', userEmail);
-                    localStorage.setItem('currentUserRole', selectedRole);
-                }
-
-                if (selectedRole === 'admin') {
-                    window.location.href = 'admin-dashboard.html';
-                } else {
-                    window.location.href = 'user-dashboard.html';
-                }
-            } else if (isSignupPage) {
-                e.preventDefault();
-                window.location.href = 'login.html';
-            } else {
-                // ALL OTHER FORMS on home, about, services, products, blog, contact, user-dashboard, admin-dashboard -> redirect to 404.html
-                e.preventDefault();
-                window.location.href = '404.html';
-            }
-        });
-    });
 }
 
 function syncUserProfileData() {
@@ -715,5 +583,231 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+// Block native browser validation popup tooltips globally
+document.addEventListener('invalid', (e) => {
+    e.preventDefault();
+}, true);
+
+// Universal Script-Based Form Validation & Inline Error Renderer
+function initUniversalFormValidation() {
+    const isNameInput = (input) => {
+        if (!input) return false;
+        const type = (input.type || 'text').toLowerCase();
+        if (type !== 'text' && type !== 'search') return false;
+
+        const idStr = (input.id || '').toLowerCase();
+        const nameStr = (input.name || '').toLowerCase();
+        const placeholderStr = (input.placeholder || '').toLowerCase();
+        const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
+
+        if (idStr.includes('email') || nameStr.includes('email') || placeholderStr.includes('email') || labelText.includes('email')) return false;
+        if (idStr.includes('pass') || nameStr.includes('pass') || placeholderStr.includes('pass') || labelText.includes('password')) return false;
+        if (idStr.includes('phone') || nameStr.includes('phone') || placeholderStr.includes('phone') || labelText.includes('phone')) return false;
+
+        return idStr.includes('name') || nameStr.includes('fullname') || nameStr.includes('firstname') || nameStr.includes('lastname') || labelText.includes('name');
+    };
+
+    const isPhoneInput = (input) => {
+        if (!input) return false;
+        const type = (input.type || '').toLowerCase();
+        if (type === 'tel') return true;
+        if (type !== 'text' && type !== 'number' && type !== 'search') return false;
+
+        const idStr = (input.id || '').toLowerCase();
+        const nameStr = (input.name || '').toLowerCase();
+        const placeholderStr = (input.placeholder || '').toLowerCase();
+        const labelText = input.labels ? Array.from(input.labels).map(l => l.textContent).join(' ').toLowerCase() : '';
+
+        return idStr.includes('phone') || idStr.includes('mobile') ||
+               nameStr.includes('phone') || nameStr.includes('mobile') ||
+               placeholderStr.includes('phone') || placeholderStr.includes('mobile') ||
+               labelText.includes('phone') || labelText.includes('mobile');
+    };
+
+    const isEmailInput = (input) => {
+        if (!input) return false;
+        const type = (input.type || '').toLowerCase();
+        if (type === 'email') return true;
+
+        const idStr = (input.id || '').toLowerCase();
+        const nameStr = (input.name || '').toLowerCase();
+        const placeholderStr = (input.placeholder || '').toLowerCase();
+
+        return idStr.includes('email') || nameStr.includes('email') || placeholderStr.includes('email');
+    };
+
+    const clearInlineError = (input) => {
+        if (!input) return;
+        input.classList.remove('input-error', 'is-invalid');
+        const parentGroup = input.closest('.form-group') || input.closest('.input-icon-wrapper') || input.parentElement;
+        if (parentGroup) {
+            const existingError = parentGroup.querySelector('.inline-error-msg');
+            if (existingError) existingError.remove();
+        }
+    };
+
+    const showInlineError = (input, message) => {
+        if (!input || !message) return;
+        clearInlineError(input);
+
+        input.classList.add('input-error', 'is-invalid');
+
+        const errorEl = document.createElement('span');
+        errorEl.className = 'inline-error-msg';
+        errorEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
+
+        const nForm = input.closest('.newsletter-form');
+        if (nForm) {
+            let nWrapper = input.closest('.newsletter-input-wrapper');
+            if (!nWrapper) {
+                nWrapper = document.createElement('div');
+                nWrapper.className = 'newsletter-input-wrapper';
+                input.parentNode.insertBefore(nWrapper, input);
+                nWrapper.appendChild(input);
+            }
+            nWrapper.appendChild(errorEl);
+        } else {
+            const parentGroup = input.closest('.form-group') || input.closest('.input-icon-wrapper');
+            if (parentGroup) {
+                parentGroup.appendChild(errorEl);
+            } else if (input.nextSibling) {
+                input.parentNode.insertBefore(errorEl, input.nextSibling);
+            } else {
+                input.parentNode.appendChild(errorEl);
+            }
+        }
+    };
+
+    document.querySelectorAll('form').forEach(form => {
+        // Disable browser default tooltip popups
+        form.setAttribute('novalidate', 'true');
+
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+            ['input', 'change', 'blur'].forEach(evt => {
+                input.addEventListener(evt, () => {
+                    const val = input.value ? input.value.trim() : '';
+                    if (val) {
+                        clearInlineError(input);
+                    }
+                });
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            let isValid = true;
+            let firstInvalidInput = null;
+
+            form.querySelectorAll('input, select, textarea').forEach(input => clearInlineError(input));
+
+            const inputs = form.querySelectorAll('input, select, textarea');
+
+            inputs.forEach(input => {
+                const val = input.value ? input.value.trim() : '';
+                const isRequired = input.hasAttribute('required') || input.required;
+                let errorMsg = '';
+
+                let fieldName = 'field';
+                if (input.labels && input.labels.length > 0) {
+                    fieldName = input.labels[0].textContent.replace('*', '').trim().toLowerCase();
+                } else if (input.placeholder) {
+                    fieldName = input.placeholder.trim().toLowerCase();
+                } else if (input.name) {
+                    fieldName = input.name.trim().toLowerCase();
+                } else if (input.id) {
+                    fieldName = input.id.trim().toLowerCase();
+                }
+
+                // Strip leading action verbs/pronouns (e.g. "enter your", "your", "enter", "type") to prevent "enter your enter your" duplication
+                fieldName = fieldName
+                    .replace(/^(enter|type|input|write|select)\s+/i, '')
+                    .replace(/^(your|a|an|the)\s+/i, '')
+                    .replace(/^(enter|type|input|write|select)\s+/i, '')
+                    .replace(/^(your|a|an|the)\s+/i, '')
+                    .trim();
+
+                if (isRequired && !val) {
+                    if (input.type === 'checkbox') {
+                        if (!input.checked) errorMsg = 'You must accept this to proceed.';
+                    } else if (input.type === 'radio') {
+                        const checkedRadio = form.querySelector(`input[name="${input.name}"]:checked`);
+                        if (!checkedRadio) errorMsg = 'Please make a selection.';
+                    } else {
+                        errorMsg = `Please enter your ${fieldName || 'information'}.`;
+                    }
+                } else if (val) {
+                    if (isNameInput(input)) {
+                        if (!/^[a-zA-Z\s]+$/.test(val)) {
+                            errorMsg = 'Please enter alphabets only.';
+                        }
+                    } else if (isPhoneInput(input)) {
+                        if (!/^[0-9]+$/.test(val)) {
+                            errorMsg = 'Please enter numbers only.';
+                        }
+                    } else if (isEmailInput(input)) {
+                        const isEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(val);
+                        if (!isEmailPattern) {
+                            errorMsg = 'Please enter a valid email address.';
+                        }
+                    } else if (input.id === 'confirmPassword') {
+                        const pwdEl = document.getElementById('signupPassword') || form.querySelector('input[type="password"]');
+                        if (pwdEl && val !== pwdEl.value) {
+                            errorMsg = 'Passwords do not match.';
+                        }
+                    }
+                }
+
+                if (errorMsg) {
+                    isValid = false;
+                    showInlineError(input, errorMsg);
+                    if (!firstInvalidInput) firstInvalidInput = input;
+                }
+            });
+
+            if (!isValid) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (firstInvalidInput) firstInvalidInput.focus();
+                return false;
+            }
+
+            const formId = form.id;
+            const pathname = window.location.pathname.toLowerCase();
+            const isLoginPage = formId === 'loginForm' || pathname.endsWith('login.html');
+            const isSignupPage = formId === 'signupForm' || pathname.endsWith('signup.html');
+
+            if (isLoginPage) {
+                e.preventDefault();
+                const emailInput = document.getElementById('loginEmail') || form.querySelector('input[type="email"]');
+                const selectedRoleInput = document.querySelector('input[name="userRole"]:checked');
+                const userEmail = emailInput ? emailInput.value.trim() : '';
+                const selectedRole = selectedRoleInput ? selectedRoleInput.value : 'user';
+
+                if (userEmail) {
+                    localStorage.setItem('currentUserEmail', userEmail);
+                    localStorage.setItem('currentUserRole', selectedRole);
+                }
+
+                if (selectedRole === 'admin') {
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    window.location.href = 'user-dashboard.html';
+                }
+            } else if (isSignupPage) {
+                e.preventDefault();
+                window.location.href = 'login.html';
+            } else {
+                e.preventDefault();
+                window.location.href = '404.html';
+            }
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUniversalFormValidation);
+} else {
+    initUniversalFormValidation();
+}
 
 

@@ -41,6 +41,38 @@ input[type="password"]::-ms-clear {
     height: 0 !important;
 }
 
+/* Custom Script Validation Inline Error Messages */
+.inline-error-msg {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #dc2626 !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    margin-top: 6px !important;
+    width: 100% !important;
+    animation: inlineErrorFadeIn 0.25s ease-out forwards !important;
+}
+
+.inline-error-msg i {
+    color: #dc2626 !important;
+    font-size: 0.78rem !important;
+}
+
+@keyframes inlineErrorFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-control.input-error,
+input.input-error,
+textarea.input-error,
+select.input-error {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+    background-color: #fef2f2 !important;
+}
+
 /* Stop scrolling when dashboard mobile sidebar is open */
 body.mobile-sidebar-open,
 body.mobile-sidebar-open .dashboard-main,
@@ -328,6 +360,19 @@ body.auth-body, body.dashboard-body {
 .auth-title-box {
     margin-bottom: 28px;
 }
+
+/* Auth Container Logo: Hide on Desktop, Show ONLY on Mobile view */
+.auth-mobile-logo {
+    display: none !important;
+}
+
+@media (max-width: 992px) {
+    .auth-mobile-logo {
+        display: inline-block !important;
+        margin-bottom: 16px !important;
+    }
+}
+
 .auth-title-box h2 {
     font-size: 2.1rem;
     font-weight: 700;
