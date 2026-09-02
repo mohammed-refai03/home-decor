@@ -1,13 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Force scroll to top on page refresh
+    // Scroll restoration for back button navigation
     if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
+        history.scrollRestoration = 'auto';
     }
-    window.scrollTo(0, 0);
-
-    window.addEventListener('beforeunload', () => {
-        window.scrollTo(0, 0);
-    });
 
     // Preloader Dismissal (Minimum 3 seconds)
     const preloader = document.getElementById('pagePreloader');

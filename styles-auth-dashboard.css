@@ -79,8 +79,6 @@ body.mobile-sidebar-open .dashboard-main,
 body.mobile-sidebar-open .dashboard-content {
     overflow: hidden !important;
     touch-action: none !important;
-    height: 100vh !important;
-    height: 100dvh !important;
 }
 
     /* Status Colors */

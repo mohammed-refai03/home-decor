@@ -3,15 +3,10 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Force scroll to top on page refresh
+    // Scroll restoration for back button navigation
     if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
+        history.scrollRestoration = 'auto';
     }
-    window.scrollTo(0, 0);
-
-    window.addEventListener('beforeunload', () => {
-        window.scrollTo(0, 0);
-    });
     
     // Initialize AOS (Animate On Scroll) for Auth & Dashboards
     const initAOS = () => {
@@ -167,12 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dashboardContainer.appendChild(sidebarOverlay);
         }
 
+        let savedSidebarScrollPos = 0;
+
         const closeMobileSidebar = () => {
             dashboardContainer.classList.remove('mobile-sidebar-active');
             document.body.classList.remove('mobile-sidebar-open');
+            if (savedSidebarScrollPos > 0) {
+                window.scrollTo(0, savedSidebarScrollPos);
+            }
         };
 
         const openMobileSidebar = () => {
+            savedSidebarScrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
             dashboardContainer.classList.add('mobile-sidebar-active');
             document.body.classList.add('mobile-sidebar-open');
         };
